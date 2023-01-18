@@ -34,7 +34,29 @@ export default defineConfig({
         'children-( relative flex flex-none box-content snap-start w-full )',
         'children-children-( w-full )'
 
-      ].join(' '), { layer: 'components progress' }
+      ].join(' '), { layer: 'components carousel' }
+    ],
+    [
+      'form-control', [
+        'flex flex-col w-full max-w-sm gap-1',
+        'children-[label]-( flex justify-between text-sm text-base-content:80  )'
+
+      ].join(' '), { layer: 'components input' }
+    ],
+    [
+      'input', [
+        'border-1 bg-base rounded-btn text-base-content pad-md ',
+        'w-full',
+        'focus-( outline outline-2 outline-offset-2 outline-base-content:20 )'
+      ].join(' '), { layer: 'components input' }
+    ],
+    [
+      'input-group', [
+        'flex',
+        'not-only-child-children-( rounded-none )',
+        'first-children-rounded-l-btn',
+        'last-children-rounded-r-btn',
+      ].join(' '), { layer: 'components input' }
     ],
     [
       'progress', [
@@ -146,6 +168,7 @@ export default defineConfig({
 
       ].join(' '), { layer: 'components collapse' }
     ],
+
     [
       /^pad-(.+)$/, (([, name]) => {
         const sizes = {
@@ -159,7 +182,6 @@ export default defineConfig({
       })
     ],
   ],
-
   rules: [
     [
       'bg-dotted', {
@@ -219,6 +241,14 @@ export default defineConfig({
     ],
   ],
   theme: {
+    animation:{
+      keyframes:{
+        pop: '{0% {transform: scale(0.5)}40% {transform: scale(1.1)}100% {transform: scale(1)}}'
+      },
+      durations:{
+        pop: '.2s'
+      }
+    },
     colors: {
       primary: "hsl(var(--p))",
       primaryContent: "hsl(var(--pc))",

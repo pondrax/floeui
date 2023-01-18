@@ -6,7 +6,7 @@ const button: UserShortcuts = [
     'btn', [
       'inline-flex flex-shrink-0 flex-wrap gap-2 cursor-pointer select-none items-center justify-center',
       'border-1.5 border-transparent text-center rounded-btn transition duration-200',
-      'font-semibold bg-neutral text-neutral-content pad-md',
+      'font-semibold bg-neutral text-neutral-content animate-pop pad-md',
       'active:(scale-90) hover:contrast-125',
       'disabled:(pointer-events-none bg-base-c text-neutral)'
     ].join(' '), { layer: 'components button' }

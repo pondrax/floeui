@@ -44,6 +44,7 @@
   const LINKS = [
     { heading: "Action", list: "button|dropdown|modal" },
     { heading: "Data Display", list: "alert|avatar|badge|card|carousel|chat-bubble|collapse|kbd|progress|stat|table|tooltip" },
+    { heading: "Data Input", list: "input" },
     { heading: "Navigation", list: "tab" },
   ];
 </script>
