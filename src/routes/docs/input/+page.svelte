@@ -27,6 +27,26 @@
     </div>
   </div>
 
+  <div>
+    <h3 font-semibold cursor-pointer hover:text-primary>## Input</h3>
+    <div use:fnTab use:fnCopy={"[data-code]"}>
+      <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
+      <!-- prettier-ignore -->
+      <div data-title="Code" demo-code use:fnPrism={`
+<div form-control>
+  <label>
+    <span>Basic Input</span>
+    <span>Info</span>
+  </label>
+  <input input type="date" placeholder="Basic Input"/> 
+  <label>
+    <span>Basic Input</span>
+    <span>Info</span>
+  </label>     
+</div>
+`} />
+    </div>
+  </div>
   
   <div>
     <h3 font-semibold cursor-pointer hover:text-primary>## Input Group</h3>
@@ -38,7 +58,7 @@
   <label>
     Label
   </label>
-  <div input-group>
+  <div group-x>
     <button btn><i i-bx-note></i></button>
     <input input type="text" placeholder="Basic Input"/> 
   </div>    
@@ -47,7 +67,7 @@
   <label>
     Label
   </label>
-  <div input-group>
+  <div group-x>
     <input input type="text" placeholder="Basic Input"/> 
     <button btn="~ base"><i i-bx-search></i></button>
   </div>    
@@ -56,7 +76,7 @@
   <label>
     Label
   </label>
-  <div input-group>
+  <div group-x>
     <button btn><i i-bx-note></i></button>
     <input input type="text" placeholder="Basic Input"/> 
     <button btn="~ base"><i i-bx-search></i></button>

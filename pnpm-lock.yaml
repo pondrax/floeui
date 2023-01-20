@@ -7,6 +7,7 @@ specifiers:
   '@sveltejs/package': ^1.0.2
   '@types/prismjs': ^1.26.0
   '@unocss/reset': ^0.48.4
+  dayjs: ^1.11.7
   prismjs: ^1.29.0
   svelte: ^3.55.1
   svelte-check: ^2.10.3
@@ -23,6 +24,7 @@ devDependencies:
   '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
   '@types/prismjs': 1.26.0
   '@unocss/reset': 0.48.4
+  dayjs: 1.11.7
   prismjs: 1.29.0
   svelte: 3.55.1
   svelte-check: 2.10.3_svelte@3.55.1
@@ -704,6 +706,10 @@ packages:
     dependencies:
       mdn-data: 2.0.30
       source-map-js: 1.0.2
+    dev: true
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: true
 
   /debug/4.3.4:

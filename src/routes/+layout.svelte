@@ -43,8 +43,8 @@
 
   const LINKS = [
     { heading: "Action", list: "button|dropdown|modal" },
-    { heading: "Data Display", list: "alert|avatar|badge|card|carousel|chat-bubble|collapse|kbd|progress|stat|table|tooltip" },
-    { heading: "Data Input", list: "input" },
+    { heading: "Data Display", list: "alert|avatar|badge|card|carousel|chat-bubble|calendar|collapse|kbd|progress|stat|table|tooltip" },
+    { heading: "Data Input", list: "input|checkbox|radio" },
     { heading: "Navigation", list: "tab" },
   ];
 </script>
@@ -53,9 +53,7 @@
   <title>FloeUI</title>
 </svelte:head>
 
-<!-- <div coba w-10 h-10>
 
-</div> -->
 <div flex h-screen bg-base overflow-hidden>
   <aside w-90 flex flex-col h-full sticky top-0 aria-label="Sidebar">
     <ul menu flex-shrink-0>    

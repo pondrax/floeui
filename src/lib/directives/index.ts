@@ -1,3 +1,4 @@
+export { default as fnCalendar } from './calendar'
 export { default as fnTab } from './tabs'
 export { default as fnCopy } from './copy'
 export { default as fnPrism } from './prism'

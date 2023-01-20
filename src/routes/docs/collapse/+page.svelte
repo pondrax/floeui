@@ -29,8 +29,8 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<div collapse-group>
-  <div tabindex="0" collapse bg-base>
+`<div group-y w-full bg-base>
+  <div tabindex="0" collapse>
     <div collapse-title>
       Title
     </div>
@@ -38,7 +38,7 @@
       <p>Collapse content</p>
     </div>
   </div>
-  <div tabindex="0" collapse bg-base>
+  <div tabindex="0" collapse>
     <div collapse-title>
       Title
     </div>
@@ -46,7 +46,7 @@
       <p>Collapse content</p>
     </div>
   </div>
-  <div tabindex="0" collapse bg-base>
+  <div tabindex="0" collapse>
     <div collapse-title>
       Title
     </div>
@@ -54,7 +54,7 @@
       <p>Collapse content</p>
     </div>
   </div>
-  <div tabindex="0" collapse bg-base>
+  <div tabindex="0" collapse>
     <div collapse-title>
       Title
     </div>

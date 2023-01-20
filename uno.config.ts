@@ -19,22 +19,70 @@ export default defineConfig({
     transformerAttributifyJsx()
   ],
   shortcuts: [
-    ...shortcuts,
+    ...shortcuts,{
+      'active': '!bg-primary !text-primary-content'
+    },
     {
       'demo-preview': 'flex flex-wrap justify-center items-start w-full gap-2 p-3 overflow-auto bg-dotted align-start rounded-xl rounded-tl-none',
       'demo-code': 'p-3 bg-neutral text-white text-xs whitespace-pre-wrap rounded-xl rounded-tl-none'
     },
+
     {
       'tab-boxed': 'btn',
       'tab-active': '!font-bold !border-base-content'
     },
     [
-      'carousel', [
-        'flex overflow-x-scroll snap-x snap-mandatory scroll-smooth ',
-        'children-( relative flex flex-none box-content snap-start w-full )',
-        'children-children-( w-full )'
+      'calendar', [
+        'p-2 bg-base rounded-xl text-center',
+        'children-( grid grid-cols-7 )',
 
-      ].join(' '), { layer: 'components carousel' }
+        // 'children-children-[:is(.calendar-title,[calendar-title])]-font-semibold',
+        // 'children-children-[:not(.calendar-title,[calendar-title])]-( bg-pinkx py-1 px-2 rounded-lg )',
+        // 'hover-children-children-[:not(.calendar-title,[calendar-title])]-( bg-base-content:20 text-base-content )',
+        // 'all-[:where(.active,[active])]-bg-neutral',
+        // 'all-[:where(.active,[active])]-text-neutral-content',
+        'all-[:where(.disabled,[disabled])]-!text-base-content:20',
+      ].join(' '), { layer: 'components calendar' }
+    ],
+    [
+      'calendar-title',[
+        'font-semibold',
+        'children-(p-2)'
+      ].join(' '),{layer:'components calendar'}
+    ],
+    [
+      'calendar-days',[
+        'calendar-list'
+      ].join(' '),{layer:'components calendar'}
+    ],
+    [
+      'calendar-list', [
+        'children-rounded-lg',
+        'children-cursor-pointer',
+        'children-p-1',
+        'hover-children-bg-base-content:20',
+        // 'children-border',
+        'all-[:nth-child(7n+1)]-text-error',
+        'all-[:nth-child(7n+1)]-col-start-1',
+        'all-[:nth-child(7n+2)]-col-start-2',
+        'all-[:nth-child(7n+3)]-col-start-3',
+        'all-[:nth-child(7n+4)]-col-start-4',
+        'all-[:nth-child(7n+5)]-col-start-5',
+        'all-[:nth-child(7n+6)]-col-start-6',
+        'all-[:nth-child(7n+7)]-col-start-7',
+        'all-[:nth-child(n+1):nth-child(-n+7)]-row-start-1',
+        'all-[:nth-child(n+8):nth-child(-n+14)]-row-start-2',
+        'all-[:nth-child(n+15):nth-child(-n+21)]-row-start-3',
+        'all-[:nth-child(n+22):nth-child(-n+28)]-row-start-4',
+        'all-[:nth-child(n+29):nth-child(-n+35)]-row-start-5',
+        'all-[:nth-child(n+36):nth-child(-n+42)]-row-start-6',
+        // 'children-children-[:is(.calendar-title,[calendar-title])]-font-semibold',
+        // 'children-children-[:not(.calendar-title,[calendar-title])]-( bg-pinkx py-1 px-2 rounded-lg )',
+        // 'hover-children-children-[:not(.calendar-title,[calendar-title])]-( bg-base-content:20 text-base-content )',
+        // 'all-[:where(.active,[active])]-bg-neutral',
+        // 'all-[:where(.active,[active])]-text-neutral-content',
+        // 'all-[:where(.disabled,[disabled])]-text-base-content:20',
+      ].join(' '), { layer: 'components calendar' }
     ],
     [
       'form-control', [
@@ -51,37 +99,16 @@ export default defineConfig({
       ].join(' '), { layer: 'components input' }
     ],
     [
-      'input-group', [
-        'flex',
-        'not-only-child-children-( rounded-none )',
-        'first-children-rounded-l-btn',
-        'last-children-rounded-r-btn',
+      'checkbox', [
+        'relative w-5 h-5 cursor-pointer appearance-none rounded-circle border border-base-content:20',
+        'checked:(bg-neutral img-checkbox animate-pop )',
       ].join(' '), { layer: 'components input' }
     ],
     [
-      'progress', [
-        'relative bg-base-content:20 rounded w-full h-2',
-
-        'before-( absolute content-none h-full left-0 bg-neutral h-2 rounded )',
-        'before-( w-[calc(var(--val)*1%)] )',
-
-        'after-( absolute content-[attr(data-tip)] bottom-full right-0 px-1 z-10 )',
-        'after-( bg-neutral text-neutral-content rounded text-xs )',
-        'after-( invisible opacity-0 duration-200)',
-        'after-hover-( visible opacity-100 )',
-
-      ].join(' '), { layer: 'components progress' }
-    ],
-    [
-      'progress-radial', [
-        '!bg-transparent flex items-center justify-center aspect-square w-auto h-auto ',
-        'before-( h-full w-full !bg-transparent bg-grad rounded-circle )'
-      ].join(' '), { layer: 'components progress' }
-    ],
-    [
-      /^progress-(\w+)$/, (([, name]) => {
-        return `before:bg-${name} before:text-${name}`;
-      }), { layer: 'components progress' }
+      'radio', [
+        'w-5 h-5 cursor-pointer appearance-none rounded-circle border border-base-content:20',
+        'checked:(bg-neutral img-radio animate-pop ) '
+      ].join(' '), { layer: 'components radio' }
     ],
     [
       'tooltip', [
@@ -144,7 +171,7 @@ export default defineConfig({
     ],
     [
       'collapse', [
-        'p-3 rounded-box w-full',
+        'py-3 px-5 rounded-btn w-full',
         // 'not-[collapse-title]-bg-blue',
         'children-[:is(.collapse-title,[collapse-title])]-focus-( after-mask-triangle )',
         'children-[:not(.collapse-title,[collapse-title])]-focus-( h-auto py-2 overflow-auto )',
@@ -153,17 +180,8 @@ export default defineConfig({
       ].join(' '), { layer: 'components collapse' }
     ],
     [
-      'collapse-group', [
-        'flex flex-col w-full',
-        'not-only-child-children-( rounded-none border-b-1 )',
-        'first-children-rounded-t-box',
-        'last-children-rounded-b-box',
-
-      ].join(' '), { layer: 'components collapse' }
-    ],
-    [
       'collapse-title', [
-        'relative cursor-pointer ',
+        'relative cursor-pointer font-light ',
         'after-( absolute top-0 right-0 mt-2 content-none mask mask-triangle-2 w-2 h-2 bg-neutral )'
 
       ].join(' '), { layer: 'components collapse' }
@@ -198,6 +216,18 @@ export default defineConfig({
         // '-webkit-mask':`
         //   radial-gradient(farthest-side,#0000 calc(99% - var(--thickness)),#000 calc(100% - var(--thickness)))
         // `
+      }
+    ],
+    [
+      'img-checkbox', {
+        '--chkbg': 'var(--n)',
+        '--chkfg': 'var(--nc )',
+        'background-image': 'linear-gradient(-45deg,transparent 65%,hsl(var(--chkbg)) 65.99%),linear-gradient(45deg,transparent 75%,hsl(var(--chkbg)) 75.99%),linear-gradient(-45deg,hsl(var(--chkbg)) 40%,transparent 40.99%),linear-gradient(45deg,hsl(var(--chkbg)) 30%,hsl(var(--chkfg)) 30.99%,hsl(var(--chkfg)) 40%,transparent 40.99%),linear-gradient(-45deg,hsl(var(--chkfg)) 50%,hsl(var(--chkbg)) 50.99%)'
+      }
+    ],
+    [
+      'img-radio', {
+        'box-shadow': '0 0 0 4px hsl(var(--b1)) inset,0 0 0 4px hsl(var(--b1)) inset'
       }
     ],
     [
@@ -241,12 +271,15 @@ export default defineConfig({
     ],
   ],
   theme: {
-    animation:{
-      keyframes:{
-        pop: '{0% {transform: scale(0.5)}40% {transform: scale(1.1)}100% {transform: scale(1)}}'
+    animation: {
+      keyframes: {
+        pop: '{0% {transform: scale(0.9)}40% {transform: scale(1.05)}100% {transform: scale(1)}}',
+        // check: '{0% {background-position-y: 5px;}50% {background-position-y: -2px;}to {background-position-y: 0;}}',
+        // radio: '{0% {box-shadow: 0 0 0 12px hsl(var(--b1)) inset, 0 0 0 12px hsl(var(--b1)) inset;}50% {box-shadow: 0 0 0 3px hsl(var(--b1)) inset, 0 0 0 3px hsl(var(--b1)) inset;}to {box-shadow: 0 0 0 4px hsl(var(--b1)) inset, 0 0 0 4px hsl(var(--b1)) inset;}}'
       },
-      durations:{
-        pop: '.2s'
+      durations: {
+        pop: '.2s',
+        // radio: '.2s',
       }
     },
     colors: {
