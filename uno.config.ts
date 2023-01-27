@@ -10,8 +10,7 @@ import {
   transformerAttributifyJsx,
 } from "unocss"
 
-import presetFloe from './src/lib'
-// import shortcuts from './src/lib/ui/shortcuts'
+import presetFloe from './package/'
 
 export default defineConfig({
   extractors: [extractorSvelte],

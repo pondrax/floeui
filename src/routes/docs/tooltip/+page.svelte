@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fnCopy, fnPrism, fnTab, fnModal, fnRef } from "$lib/directives";
+  import { fnCopy, fnPrism, fnTab, fnModal, fnRef } from "$lib/directives/index.js";
 </script>
 
 <div flex flex-col gap-10>

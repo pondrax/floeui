@@ -1,37 +1,38 @@
-import alert from './alert'
-import avatar from './avatar'
-import badge from './badge'
-import button from './button'
-import card from './card'
-import carousel from './carousel'
-import calendar from './calendar'
-import collapse from './collapse'
-import dropdown from './dropdown'
-import group from './group'
-import kbd from './kbd'
-import menu from './menu'
-import modal from './modal'
-import progress from './progress'
-import tabs from './tab'
-import table from './table'
-import tooltip from './tooltip'
+import alert from './alert.js'
+import avatar from './avatar.js'
+import badge from './badge.js'
+import button from './button.js'
+import card from './card.js'
+import carousel from './carousel.js'
+import calendar from './calendar.js'
+import collapse from './collapse.js'
+import dropdown from './dropdown.js'
+import group from './group.js'
+import kbd from './kbd.js'
+import menu from './menu.js'
+import modal from './modal.js'
+import progress from './progress.js'
+import tabs from './tab.js'
+import table from './table.js'
+import tooltip from './tooltip.js'
+import type { Shortcut } from 'unocss'
 
 export default [
-  ...alert as any,
-  ...avatar as any,
-  ...badge as any,
-  ...button as any,
-  ...card as any,
-  ...carousel as any,
-  ...calendar as any,
-  ...collapse as any,
-  ...dropdown as any,
-  ...group as any,
-  ...kbd as any,
-  ...menu as any,
-  ...modal as any,
-  ...progress as any,
-  ...tabs as any,
-  ...table as any,
-  ...tooltip as any,
-]
+  ...alert,
+  ...avatar,
+  ...badge,
+  ...button,
+  ...card,
+  ...carousel,
+  ...calendar,
+  ...collapse,
+  ...dropdown,
+  ...group,
+  ...kbd,
+  ...menu,
+  ...modal,
+  ...progress,
+  ...tabs,
+  ...table,
+  ...tooltip,
+] as Shortcut[]

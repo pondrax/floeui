@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const card: UserShortcuts = [  
+const card: Shortcut[] = [  
   [
     'card', [
       'flex flex-col shadow-lg  bg-base rounded-box overflow-hidden',

@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const tooltip: UserShortcuts = [ 
+const tooltip: Shortcut[] = [ 
   [
     'tooltip', [
       'relative flex justify-center items-center text-center bg-neutral',

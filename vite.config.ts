@@ -8,6 +8,7 @@ import type { PluginOption } from "vite";
 export default defineConfig({
   plugins: [
     CustomHmr(),
+    // @ts-ignore
     unocss(),
     sveltekit(),
   ]
@@ -19,7 +20,7 @@ function CustomHmr(): PluginOption {
     enforce: 'post',
     // HMR
     handleHotUpdate({ file, server }) {
-      if (file.includes('/src/lib/ui')) {
+      if (file.includes('/package')) {
         console.log(file, 'Full reload');
         server.restart()
         // server.ws.send({

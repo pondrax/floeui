@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss";
+import type { Shortcut } from "unocss";
 
-const dropdown: UserShortcuts = [
+const dropdown: Shortcut[] = [
   [
     'dropdown', [
       'relative inline-block',

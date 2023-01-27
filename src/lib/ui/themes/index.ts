@@ -1,6 +1,6 @@
-import animation from "./animation"
-import borderRadius from "./border-radius"
-import colors from "./colors"
+import animation from "./animation.js"
+import borderRadius from "./border-radius.js"
+import colors from "./colors.js"
 
 export default {
   animation,

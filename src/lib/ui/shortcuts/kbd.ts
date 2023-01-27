@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const kbd: UserShortcuts = [ 
+const kbd: Shortcut[] = [ 
   [
     'kbd', [
       'inline-flex justify-center items-center pad-md',

@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss";
+import type { Shortcut } from "unocss";
 
-const tabs: UserShortcuts = [
+const tabs: Shortcut[] = [
   [
     'tab-boxed', [
       'btn'

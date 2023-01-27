@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fnCopy, fnPrism, fnTab, fnModal } from "$lib/directives";
+  import { fnCopy, fnPrism, fnTab, fnModal } from "$lib/directives/index.js";
   let modalOpen = false;
 </script>
 

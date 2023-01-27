@@ -1,7 +1,6 @@
-import type { UserShortcuts } from "unocss"
-import { colorSchemes } from "./base";
+import type { Shortcut } from "unocss"
 
-const avatar: UserShortcuts = [  
+const avatar: Shortcut[] = [  
   [
     'avatar', [
       'relative flex items-center justify-center',

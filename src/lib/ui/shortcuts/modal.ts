@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const modal: UserShortcuts = [  
+const modal: Shortcut[] = [  
   [
     'modal', [
       'fixed top-0 bottom-0 left-0 right-0 cursor-pointer bg-op-c flex justify-center items-center p-6 z-50 overflow-auto',

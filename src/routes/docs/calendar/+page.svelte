@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
-  import { fnCalendar, fnCopy, fnPrism, fnRef, fnTab } from "$lib/directives";
+  import { browser } from "$lib/utils.js";
+  import { fnCalendar, fnCopy, fnPrism, fnRef, fnTab } from "$lib/directives/index.js";
   import dayjs from "dayjs";
 
   if (browser) {

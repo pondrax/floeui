@@ -4,7 +4,8 @@
   import "uno.css";
   // import "prismjs/themes/prism-okaidia.css";
 
-  import { theme } from "$lib/directives";
+
+  import { theme } from "$lib/directives/index.js";
   import { page } from "$app/stores";
 
   const THEMES = [

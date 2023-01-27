@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const carousel: UserShortcuts = [ 
+const carousel: Shortcut[] = [ 
   [
     'carousel', [
       'flex overflow-x-scroll snap-x snap-mandatory scroll-smooth ',

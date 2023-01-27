@@ -1,6 +1,6 @@
-import background from "./background";
-import images from "./images";
-import mask from "./mask";
+import background from "./background.js";
+import images from "./images.js";
+import mask from "./mask.js";
 
 export default [
   ...mask,

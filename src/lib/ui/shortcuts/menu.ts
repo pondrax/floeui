@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const menu: UserShortcuts = [
+const menu: Shortcut[] = [
   [
     'menu', [
       // current

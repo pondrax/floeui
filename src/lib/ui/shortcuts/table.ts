@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss";
+import type { Shortcut } from "unocss";
 
-const table:UserShortcuts = [
+const table: Shortcut[] = [
   [
     'table', [
       // 'bg-blue',

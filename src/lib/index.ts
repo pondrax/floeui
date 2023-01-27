@@ -1,3 +1,3 @@
-import presetFloe from "./ui"
+import presetFloe from "./ui/index.js"
 
 export default presetFloe

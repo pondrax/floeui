@@ -1,7 +1,6 @@
-import type { UserShortcuts } from "unocss"
-import { colorSchemes } from "./base";
+import type { Shortcut } from "unocss"
 
-const calendar: UserShortcuts = [  
+const calendar: Shortcut[] = [  
   
   [
     'calendar', [

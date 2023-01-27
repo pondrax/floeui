@@ -1,7 +1,7 @@
-import type { UserShortcuts } from "unocss"
-import { colorSchemes, sizeSchemes, roundedSchemes } from "./base";
+import type { Shortcut } from "unocss"
+import { colorSchemes, sizeSchemes, roundedSchemes } from "./base.js";
 
-const button: UserShortcuts = [
+const button: Shortcut[] = [
   [
     'btn', [
       'inline-flex flex-shrink-0 flex-wrap gap-2 cursor-pointer select-none items-center justify-center',

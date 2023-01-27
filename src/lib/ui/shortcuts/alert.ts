@@ -1,7 +1,7 @@
-import type { UserShortcuts } from "unocss"
-import { colorSchemes } from "./base";
+import type { Shortcut } from "unocss"
+import { colorSchemes } from "./base.js";
 
-const alert: UserShortcuts = [  
+const alert: Shortcut[] = [  
   [
     'alert', [
       'flex flex-wrap w-full items-center justify-center gap-3',

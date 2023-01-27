@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const group: UserShortcuts = [
+const group: Shortcut[] = [
   [
     'group-x', [
       'flex rounded-btn',

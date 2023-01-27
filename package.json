@@ -1,11 +1,12 @@
 {
 	"name": "floeui",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"start": "vite build && vite preview",
 		"package": "svelte-kit sync && svelte-package",
+		"package:watch": "svelte-kit sync && svelte-package -w",
 		"publish": "svelte-kit sync && svelte-package && npm publish ./package --public",
 		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

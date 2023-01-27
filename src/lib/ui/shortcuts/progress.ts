@@ -1,6 +1,6 @@
-import type { UserShortcuts } from "unocss"
+import type { Shortcut } from "unocss"
 
-const progress: UserShortcuts = [ 
+const progress: Shortcut[] = [ 
   [
     'progress', [
       'relative bg-base-content:20 rounded w-full h-2',
