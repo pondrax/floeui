@@ -2,31 +2,31 @@
 export default (node: HTMLElement) => {
   let tabs = [...node.children] as HTMLElement[];
   let styles: string[] = [];
-  let ul = document.createElement('ul');
-  ul.className = 'tabs tabs-bordered';
+  let div = document.createElement('div');
+  div.className = 'tabs tabs-bordered';
 
   tabs.forEach(child => {
     let title = child.dataset.title;
     styles.push(child.style.display)
-    ul.innerHTML += `<li data-title=${title}>${title}</li>`
+    div.innerHTML += `<button data-title=${title}>${title}</button>`
   });
-  node.prepend(ul);
+  node.prepend(div);
 
   const setActive = (id: number) => {
     tabs.forEach((child, i) => {
       if (i == id) {
-        [...ul.children][i].classList.add('tab-active')
+        [...div.children][i].classList.add('tab-active')
         child.style.display = styles[i]
       }else{
-        [...ul.children][i].classList.remove('tab-active')
+        [...div.children][i].classList.remove('tab-active')
         child.style.display = 'none'
       }
     });
   }
   const handleClick = (event: Event) => {
     if (event.target instanceof HTMLElement) {
-      if (ul.contains(event.target)) {
-        let selectedIndex = [...ul.children].indexOf(event.target);
+      if (div.contains(event.target)) {
+        let selectedIndex = [...div.children].indexOf(event.target);
         setActive(selectedIndex);
 
         node.dispatchEvent(new CustomEvent("selectedTab"));

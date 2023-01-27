@@ -13,10 +13,10 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
 `<div avatar w-10 rounded>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 h-24 mask-squircle>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>`}/>
     </div>
   </div>
@@ -37,13 +37,13 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
 `<div avatar w-24 mask-circle>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 ring ring-primary ring-offset-2>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 h-24 mask-squircle>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>`}/>
     </div>
   </div>
@@ -54,61 +54,61 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
 `<div avatar w-24 mask-squircle ring-4>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-decagon>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-diamond>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-heart>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-hexagon>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-hexagon-2>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-circle>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-parallelogram>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-parallelogram-2>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-parallelogram-3>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-parallelogram-4>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-pentagon>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-square>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-star>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-star-2>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-triangle>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-triangle-2>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-triangle-3>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>
 <div avatar w-24 mask-triangle-4>
-  <img src="https://placeimg.com/192/192/people" alt="img" />
+  <img src="https://api.lorem.space/image/album?w=150&h=150" alt="img" />
 </div>`}/>
     </div>
   </div>

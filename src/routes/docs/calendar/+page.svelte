@@ -58,41 +58,46 @@
     <div use:fnTab use:fnCopy={"[data-code]"}>
       <div data-title="Preview" demo-preview>
         <div calendar>
-          <ul calendar-title>
-            <li col-span-5 text-left px-2>
+          <div calendar-title>
+            <div col-span-5 text-left px-2>
               {currentDate.format("YYYY-MM-DD")}
-            </li>
-            <li>
+            </div>
+            <div>
               <button
                 btn="~ sm"
                 on:click={() =>
                   (currentDate = currentDate.subtract(1, "month"))}>&lt;</button
               >
-            </li>
-            <li>
+                </div>
+            <div>
               <button
                 btn="~ sm"
                 on:click={() => (currentDate = currentDate.add(1, "month"))}
                 >&gt;</button
               >
-            </li>
-            <li>su</li>
-            <li>mo</li>
-            <li>tu</li>
-            <li>we</li>
-            <li>th</li>
-            <li>fr</li>
-            <li>sa</li>
-          </ul>
-          <ul calendar-days>
+            </div>
+            <div>su</div>
+            <div>mo</div>
+            <div>tu</div>
+            <div>we</div>
+            <div>th</div>
+            <div>fr</div>
+            <div>sa</div>
+          </div>
+          <div calendar-days>
             {#each days as day}
               <!-- svelte-ignore a11y-click-events-have-key-events -->
-              <li class:active={day.current} class:disabled={day.disabled} on:click={()=>currentDate = day.date}>
+              <div
+                class:border-primary={day.current}
+                class:disabled={day.disabled}
+                on:click={() => (currentDate = day.date)}
+              >
                 {day.date?.format("D")}
                 <!-- {day.date?.format("MM-DD")} -->
-              </li>
+              </div>
             {/each}
-          </ul>
+            <div class="!row-start-2 !col-start-5 col-span-3 bg-pink:10 pointer-events-none">test</div>
+          </div>
         </div>
       </div>
       <!-- use:fnRef={"[data-code]"} /> -->

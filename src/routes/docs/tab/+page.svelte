@@ -12,12 +12,12 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<ul tabs>
-  <li>Item A</li>
-  <li tab-active>Item B</li>
-  <li>Item C</li>
-  <li>Item D</li>
-</ul>`}/>
+`<div tabs>
+  <button>Item A</button>
+  <button tab-active>Item B</button>
+  <button>Item C</button>
+  <button>Item D</button>
+</div>`}/>
     </div>
   </div>
   <div>
@@ -26,12 +26,12 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<ul tabs="~ bordered">
-  <li>Item A</li>
-  <li>Item B</li>
-  <li class="tab-active">Item C</li>
-  <li>Item D</li>
-</ul>`}/>
+`<div tabs="~ bordered">
+  <button>Item A</button>
+  <button>Item B</button>
+  <button class="tab-active">Item C</button>
+  <button>Item D</button>
+</div>`}/>
     </div>
   </div>
 </div>

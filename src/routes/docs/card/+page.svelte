@@ -13,7 +13,7 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
 `<div card lg:flex-row>
-  <img src="https://placeimg.com/400/200/arch" alt="Album" />
+  <img src="https://api.lorem.space/image/album?w=400&h=150" alt="Album" />
   <div>
     <h2 text-xl>Card Title</h2>
     <p>Card content</p>

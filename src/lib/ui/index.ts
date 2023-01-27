@@ -1,12 +1,15 @@
 import type { Preset } from 'unocss'
-// import shortcuts from './rules'
+import rules from './rules'
+import shortcuts from './shortcuts'
+import theme from './themes'
 // console.log(shortcuts)
 
-export function presetFloe(): Preset {
+export default function presetFloe(): Preset {
   return {
     name: 'floeui',
-    // shortcuts
-    // theme,
+    rules,
+    shortcuts,
+    theme,
     // rules,
     // variants,
     // shortcuts,

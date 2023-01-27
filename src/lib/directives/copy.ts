@@ -11,7 +11,7 @@ export default (node: HTMLElement, target: string) => {
   copyButton.innerHTML = content[0];
 
   node.classList.add('relative')
-  node.prepend(copyButton)
+  node.append(copyButton)
 
   const handleClick = (event: Event) => {
     copyButton.innerHTML = content[1];

@@ -1,2 +1,3 @@
-// Reexport your entry components here
-export { typeahead } from './utils'
+import presetFloe from "./ui"
+
+export default presetFloe

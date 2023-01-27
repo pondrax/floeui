@@ -1,9 +1,7 @@
 <script lang="ts">
   import "@unocss/reset/tailwind.css";
+  import "$lib/ui/styles/index.css";
   import "uno.css";
-  import "$lib/ui/styles/base.css";
-  import "$lib/ui/styles/themes.css";
-  import "$lib/ui/styles/prism.css";
   // import "prismjs/themes/prism-okaidia.css";
 
   import { theme } from "$lib/directives";

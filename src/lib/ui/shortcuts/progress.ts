@@ -16,15 +16,15 @@ const progress: UserShortcuts = [
     ].join(' '), { layer: 'components progress' }
   ],
   [
+    /^progress-(\w+)$/, (([, name]) => {
+      return `before:bg-${name} before:text-${name}`;
+    }), { layer: 'components progress' }
+  ],
+  [
     'progress-radial', [
       '!bg-transparent flex items-center justify-center aspect-square w-auto h-auto ',
       'before-( h-full w-full !bg-transparent bg-grad rounded-circle )'
     ].join(' '), { layer: 'components progress' }
-  ],
-  [
-    /^progress-(\w+)$/, (([, name]) => {
-      return `before:bg-${name} before:text-${name}`;
-    }), { layer: 'components progress' }
   ],
 ];
 

@@ -8,7 +8,8 @@ const button: UserShortcuts = [
       'border-1.5 border-transparent text-center rounded-btn transition duration-200',
       'font-semibold bg-neutral text-neutral-content animate-pop pad-md',
       'active:(scale-90) hover:contrast-125',
-      'disabled:(pointer-events-none bg-base-c text-neutral)'
+      'disabled:(pointer-events-none bg-base-c text-neutral)',
+      'focus:(ring ring-2 ring-base-content:20)'
     ].join(' '), { layer: 'components button' }
   ],
   [

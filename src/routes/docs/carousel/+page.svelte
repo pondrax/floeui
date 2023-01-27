@@ -14,16 +14,16 @@
       <div data-title="Code" demo-code use:fnPrism={
 `<div carousel w-full rounded-box>
   <div id="item1">
-    <img src="https://placeimg.com/1400/400/arch" />
+    <img src="https://api.lorem.space/image/album?w=300&h=150" />
   </div> 
   <div id="item2">
-    <img src="https://placeimg.com/800/400/arch"/>
+    <img src="https://api.lorem.space/image/album?w=300&h=150"/>
   </div> 
   <div id="item3">
-    <img src="https://placeimg.com/800/400/arch"/>
+    <img src="https://api.lorem.space/image/album?w=300&h=150"/>
   </div> 
   <div id="item4">
-    <img src="https://placeimg.com/800/400/arch"/>
+    <img src="https://api.lorem.space/image/album?w=300&h=150"/>
   </div>
 </div> 
 <div class="flex justify-center w-full py-2 gap-2">
