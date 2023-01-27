@@ -1,0 +1,51 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.mobile ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+}
+
+::-webkit-scrollbar {
+  /* width of the entire scrollbar */
+  width: .5rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  /* color of the tracking area */
+  background: hsl(var(--b3));  
+  margin:1rem;
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--bc), .5);
+  /* color of the scroll thumb */
+  border-radius: 5rem;
+  /* roundness of the scroll thumb */
+  /* border: 3px solid orange;  creates padding around scroll thumb */
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar,
+.carousel::-webkit-scrollbar,
+[carousel]::-webkit-scrollbar{
+  display: none;
+}
+.scrollbar-hide,
+.carousel,
+[carousel]{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
