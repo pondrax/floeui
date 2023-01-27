@@ -1,10 +1,6 @@
 <script lang="ts">
-  import "@unocss/reset/tailwind.css";
-  import "$lib/ui/styles/index.css";
+  import "$lib/floe.css";
   import "uno.css";
-  // import "prismjs/themes/prism-okaidia.css";
-
-
   import { theme } from "$lib/directives/index.js";
   import { page } from "$app/stores";
 

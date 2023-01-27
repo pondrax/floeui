@@ -1,4 +1,4 @@
-# FLoeUI
+# FloeUI
 
 💅 An adaptation of the [DaisyUI](https://daisyui.com/) Tailwind plugin for [UnoCSS](https://github.com/unocss/unocss)
 
@@ -54,7 +54,7 @@ export default defineConfig({
   - [x] Button
   - [x] Dropdown
   - [x] Modal
-  - [-] Swap 
+  - [ ] ~~Swap~~ 
 
 - Data display
   - [x] Alert
@@ -67,7 +67,7 @@ export default defineConfig({
   - [ ] Chat bubble
   - [x] Collapse
   - [ ] Comment
-  - [-] Countdown
+  - [ ] ~~Countdown~~
   - [ ] Empty placeholder
   - [x] Kbd
   - [ ] Loading

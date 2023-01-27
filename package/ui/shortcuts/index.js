@@ -1,3 +1,4 @@
+import base from './base.js';
 import alert from './alert.js';
 import avatar from './avatar.js';
 import badge from './badge.js';
@@ -15,7 +16,11 @@ import progress from './progress.js';
 import tabs from './tab.js';
 import table from './table.js';
 import tooltip from './tooltip.js';
+import input from './input.js';
+import checkbox from './checkbox.js';
+import radio from './radio.js';
 export default [
+    ...base,
     ...alert,
     ...avatar,
     ...badge,
@@ -23,13 +28,16 @@ export default [
     ...card,
     ...carousel,
     ...calendar,
+    ...checkbox,
     ...collapse,
     ...dropdown,
     ...group,
+    ...input,
     ...kbd,
     ...menu,
     ...modal,
     ...progress,
+    ...radio,
     ...tabs,
     ...table,
     ...tooltip,
