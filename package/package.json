@@ -1,6 +1,6 @@
 {
   "name": "floeui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
   "keywords": [
     "unocss",
@@ -50,6 +50,7 @@
     "./ui/shortcuts/avatar": "./ui/shortcuts/avatar.js",
     "./ui/shortcuts/badge": "./ui/shortcuts/badge.js",
     "./ui/shortcuts/base": "./ui/shortcuts/base.js",
+    "./ui/shortcuts/breadcrumb": "./ui/shortcuts/breadcrumb.js",
     "./ui/shortcuts/button": "./ui/shortcuts/button.js",
     "./ui/shortcuts/calendar": "./ui/shortcuts/calendar.js",
     "./ui/shortcuts/card": "./ui/shortcuts/card.js",

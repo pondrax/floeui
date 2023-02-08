@@ -2,6 +2,7 @@ import base from './base.js';
 import alert from './alert.js';
 import avatar from './avatar.js';
 import badge from './badge.js';
+import breadcrumb from './breadcrumb.js';
 import button from './button.js';
 import card from './card.js';
 import carousel from './carousel.js';
@@ -24,6 +25,7 @@ export default [
     ...alert,
     ...avatar,
     ...badge,
+    ...breadcrumb,
     ...button,
     ...card,
     ...carousel,

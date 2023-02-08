@@ -13,15 +13,15 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={`
 <div form-control>
-  <label>
+  <div>
     <span>Basic Input</span>
     <span>Info</span>
-  </label>
+  </div>
   <input input type="text" placeholder="Basic Input"/> 
-  <label>
+  <div>
     <span>Basic Input</span>
     <span>Info</span>
-  </label>     
+  </div>     
 </div>
 `} />
     </div>
@@ -34,15 +34,15 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={`
 <div form-control>
-  <label>
+  <div>
     <span>Basic Input</span>
     <span>Info</span>
-  </label>
+  </div>
   <input input type="date" placeholder="Basic Input"/> 
-  <label>
+  <div>
     <span>Basic Input</span>
     <span>Info</span>
-  </label>     
+  </div>     
 </div>
 `} />
     </div>
@@ -55,27 +55,27 @@
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={`
 <div form-control>
-  <label>
+  <div>
     Label
-  </label>
+  </div>
   <div group-x>
     <button btn><i i-bx-note></i></button>
     <input input type="text" placeholder="Basic Input"/> 
   </div>    
 </div>
 <div form-control>
-  <label>
+  <div>
     Label
-  </label>
+  </div>
   <div group-x>
     <input input type="text" placeholder="Basic Input"/> 
     <button btn="~ base"><i i-bx-search></i></button>
   </div>    
 </div>
 <div form-control>
-  <label>
+  <div>
     Label
-  </label>
+  </div>
   <div group-x>
     <button btn><i i-bx-note></i></button>
     <input input type="text" placeholder="Basic Input"/> 
