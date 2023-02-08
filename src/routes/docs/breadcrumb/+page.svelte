@@ -13,7 +13,7 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<ul breadcrumb gap-5 overflow-x-auto max-w-full>
+`<ul breadcrumb>
   <li><a>Home</a></li> 
   <li><a>Documents</a></li> 
   <li>Add Document</li>
@@ -27,7 +27,7 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<ul breadcrumb gap-5 overflow-x-auto max-w-full>
+`<ul breadcrumb>
   <li><a><i i-bx-home></i>Home</a></li> 
   <li><a><i i-bx-book></i>Documents</a></li> 
   <li>Add Document</li>

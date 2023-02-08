@@ -1,7 +1,7 @@
 const breadcrumb = [
     [
         'breadcrumb', [
-            'flex whitespace-nowrap text-sm',
+            'flex whitespace-nowrap text-sm gap-5 overflow-x-auto max-w-full',
             'all-[a]-(inline-flex gap-1 cursor-pointer)',
             'all-[a:hover]-(underline)',
             'children-relative',

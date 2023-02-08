@@ -12,8 +12,8 @@
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
       <div data-title="Code" demo-code use:fnPrism={
-`<div class="overflow-x-auto">
-  <table table bg-base w-100>
+`<div class="overflow-x-auto" bg-base p-6>
+  <table table bg-base>
     <!-- head -->
     <thead>
       <tr children-bg-base-a>
