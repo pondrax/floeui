@@ -18,7 +18,7 @@
     <thead>
       <tr children-bg-base-a>
         <th bg-base-a sticky left-0>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <th>Name</th>
         <th>Job</th>
@@ -29,7 +29,7 @@
       <!-- row 1 -->
       <tr>
         <th bg-base sticky left-0>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Cy Ganderton</td>
         <td>Quality Control Specialist</td>
@@ -38,7 +38,7 @@
       <!-- row 2 -->
       <tr>
         <th bg-base sticky left-0>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Hart Hagerty</td>
         <td>Desktop Support Technician</td>
@@ -47,7 +47,7 @@
       <!-- row 3 -->
       <tr>
         <th bg-base sticky left-0>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Brice Swyre</td>
         <td>Tax Accountant</td>
@@ -56,7 +56,7 @@
       <!-- row 4 -->
       <tr>
         <th bg-base sticky left-0>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Brice Swyre</td>
         <td>Tax Accountant</td>
@@ -82,7 +82,7 @@
     <thead>
       <tr children-bg-base-a>
         <th>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <th>Name</th>
         <th>Job</th>
@@ -93,7 +93,7 @@
       <!-- row 1 -->
       <tr>
         <th>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Cy Ganderton</td>
         <td>Quality Control Specialist</td>
@@ -102,7 +102,7 @@
       <!-- row 2 -->
       <tr>
         <th>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Hart Hagerty</td>
         <td>Desktop Support Technician</td>
@@ -111,7 +111,7 @@
       <!-- row 3 -->
       <tr>
         <th>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Brice Swyre</td>
         <td>Tax Accountant</td>
@@ -120,7 +120,7 @@
       <!-- row 4 -->
       <tr>
         <th>
-          <label><input type="checkbox" checkbox/></label>
+          <input type="checkbox" checkbox/>
         </th>
         <td>Brice Swyre</td>
         <td>Tax Accountant</td>

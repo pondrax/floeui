@@ -1,17 +1,15 @@
 const table = [
     [
         'table', [
-            // 'bg-blue',
             'rounded-xl',
             'all-[th]-(p-2 whitespace-nowrap uppercase font-semibold text-90% text-left)',
             'all-[td]-(p-2 relative)',
             'all-[:is([sticky])]-z-10',
             // rounded corners
-            // 'first-all-[th]-first-all-first-all-border-red',
-            'first-all-first-all-first-all-rounded-tl-xl',
-            'last-all-first-all-first-all-rounded-tr-xl',
-            'first-all-last-all-last-all-rounded-bl-xl',
-            'last-all-last-all-last-all-rounded-br-xl',
+            'first-all-[:where(th,td)]-all-[:where(*:first-child)]-all-[:where(*:first-child)]-rounded-tl-xl',
+            'last-all-[:where(th,td)]-all-[:where(*:first-child)]-all-[:where(*:first-child)]-rounded-tr-xl',
+            'first-all-[:where(th,td)]-all-[:where(*:last-child)]-all-[:where(*:last-child)]-rounded-bl-xl',
+            'last-all-[:where(th,td)]-all-[:where(*:last-child)]-all-[:where(*:last-child)]-rounded-br-xl',
             // hover background
             'children-all-[tr:hover]:( bg-base-b )',
         ].join(' '), { layer: 'components table' }
