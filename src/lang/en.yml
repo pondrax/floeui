@@ -1,0 +1,7 @@
+intro: The following is a list of all the commands you can use with the bot.
+button:
+  description: Buttons allow the user to take actions or make choices.
+dropdown:
+  description: Dropdown can open a menu or any other element when the button is clicked.
+alert:
+  description: Alert informs users about important events.
