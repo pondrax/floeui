@@ -1,5 +1,5 @@
 <script>
-	/** @type {import('./$types').PageData} */
+	import { fnTheme } from '$lib/directives/index.js';
 	export let data;
 	let sidebarOpen = false;
 </script>
@@ -18,17 +18,14 @@
 				</div>
 			</div>
 			<form form-control>
-				<!-- <div group-x> -->
 				<!-- svelte-ignore a11y-autofocus -->
 				<input input name="q" placeholder="Search" autofocus />
-				<!-- <button btn="~ base"><i i-bx-search></i></button> -->
-				<!-- </div> -->
 			</form>
 		</div>
 		<ul menu overflow-auto bg-base>
-			{#each data.docs as doc}
+			{#each data.docs as {path, active}}
 				<li>
-					<a href={'/docs/' + doc} capitalize>{doc.replaceAll('-', ' ')}</a>
+					<a href={'/docs/' + path} class:bg-base-b={active} capitalize>{path.replaceAll('-', ' ')}</a>
 				</li>
 			{/each}
 			<li></li>
@@ -38,9 +35,9 @@
 
 			{#each data.components as [heading, links]}
 				<li menu-heading capitalize>{heading}</li>
-				{#each links as link}
+				{#each links as {path, active}}
 					<li>
-						<a href={'/components/' + link.path} capitalize>{link.path.replaceAll('-', ' ')}</a>
+						<a href={'/components/' + path} class:bg-base-b={active} capitalize>{path.replaceAll('-', ' ')}</a>
 					</li>
 				{/each}
 				<li></li>
@@ -49,9 +46,17 @@
 	</aside>
 	<section drawer-content>
 		<div bg-baseA rounded-box p-5 h-full overflow-auto>
-			<button drawer-toggle btn="~ sm outline" bg-base on:click={() => (sidebarOpen = !sidebarOpen)} mb-5>
-				<i i-bx-menu />
-			</button>
+			<div use:fnTheme flex gap-1>
+				<button
+					drawer-toggle
+					btn="~ sm outline"
+					bg-base
+					on:click={() => (sidebarOpen = !sidebarOpen)}
+					mb-5
+				>
+					<i i-bx-menu />
+				</button>
+			</div>
 			<slot />
 		</div>
 	</section>

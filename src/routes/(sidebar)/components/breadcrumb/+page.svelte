@@ -11,7 +11,6 @@
     <h2 text-xl cursor-pointer hover-text-primary># Breadcrumb</h2>
   </div>
   <div>
-    <i i-bx-extension=""></i>
     <h3 font-semibold cursor-pointer hover-text-primary>## Breadcrumb</h3>
     <div use:fnTab use:fnCopy={"[data-code]"}>
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />

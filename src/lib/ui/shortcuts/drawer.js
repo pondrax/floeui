@@ -38,7 +38,7 @@ const drawer = [
 	[
 		'drawer-toggle',
 		[
-			'visible lg:invisible'
+			'flex lg:hidden'
 		].join(' '),
 		{ layer: 'components drawer' }
 	]

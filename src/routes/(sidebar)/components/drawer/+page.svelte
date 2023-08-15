@@ -21,7 +21,7 @@
   function openDrawer(){
     open=true;
   }
-(script)
+(/script)
 
 <div drawer bg-base h-full w-full>
   <div drawer-side  bg-base lg:drawer-open class:drawer-open={open}>

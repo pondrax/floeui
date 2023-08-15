@@ -1,9 +1,9 @@
 <script context="module">
-	export const heading = 'Display';
-	import { fnCopy, fnPrism, fnTab, fnModal } from '$lib/directives/index.js';
+	export const heading = 'Action';
 </script>
 
 <script>
+	import { fnCopy, fnPrism, fnTab, fnModal } from '$lib/directives/index.js';
 	let modalOpen = false;
 </script>
 

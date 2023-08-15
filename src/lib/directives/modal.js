@@ -1,3 +1,4 @@
+// @unocss-include
 /**
  * Initializes a modal behavior on the given HTML element.
  *

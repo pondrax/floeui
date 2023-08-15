@@ -1,3 +1,4 @@
+// @unocss-include
 import { highlight, languages } from 'prismjs';
 import 'prism-svelte';
 import beautify from 'js-beautify';

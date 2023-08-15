@@ -4,10 +4,15 @@ import inlangPlugin from '@inlang/sdk-js/adapter-sveltekit';
 import unocss from 'unocss/vite';
 
 export default defineConfig({
-	plugins: [inlangPlugin(), unocss(), sveltekit(), CustomHmr()],
+	plugins: [
+		inlangPlugin(), 
+		unocss(), 
+		sveltekit(), 
+		CustomHmr()
+	],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	},
 });
 
 function CustomHmr() {

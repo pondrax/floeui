@@ -40,7 +40,7 @@ export default function initializeThemeSelector(node, theme) {
 	];
 
 	const themeDiv = document.createElement('div');
-	themeDiv.className = 'fixed right-6 top-7 dropdown dropdown-end';
+	themeDiv.className = 'dropdown';
 	themeDiv.innerHTML = `
     <!-- Dropdown button -->
     <button btn="~ sm outline" bg-base>

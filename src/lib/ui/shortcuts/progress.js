@@ -4,7 +4,7 @@ const progress = [
 		[
 			'relative bg-base-content:20 rounded w-full h-2',
 
-			'before-( absolute content-none h-full left-0 bg-neutral h-2 rounded )',
+			'before-( absolute content-[""] h-full left-0 bg-neutral h-2 rounded )',
 			'before-( w-[calc(var(--val)*1%)] )',
 
 			'after-( absolute content-[attr(data-tip)] bottom-full right-0 px-1 z-10 )',

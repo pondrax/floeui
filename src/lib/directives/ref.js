@@ -1,3 +1,4 @@
+// @unocss-include
 /**
  * Retrieves a specific attribute value from a referenced HTML element.
  *
@@ -23,9 +24,11 @@ export const ref = (node, target) => {
  */
 export default (node, target) => {
 	setTimeout(() => {
-		const html = ref(node, target);
-		if (html)
+		let html = ref(node, target);
+		if (html){
+			// html = html.replace('<script>','(script)').replace('</script>','(script)')
 			node.innerHTML = html;
+		}
 	}, 250);
 	return {};
 };
