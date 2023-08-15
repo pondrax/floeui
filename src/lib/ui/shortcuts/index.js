@@ -9,7 +9,7 @@ import carousel from './carousel.js';
 import calendar from './calendar.js';
 import collapse from './collapse.js';
 import dropdown from './dropdown.js';
-import drawer from './drawer.js'
+import drawer from './drawer.js';
 import group from './group.js';
 import kbd from './kbd.js';
 import menu from './menu.js';

@@ -2,11 +2,10 @@
 import { groupBy } from '$lib/utils.js';
 /** @type {import { LayoutServerLoad } from "./$types";} */
 export async function load() {
-	
 	const docModules = await Promise.all(
 		Object.entries(import.meta.glob('./docs/**/+page.svelte')).map(async ([path]) => {
 			path = path.replace(/(\.|\/|docs|\+page\.svelte)/g, '');
-			return path
+			return path;
 		})
 	);
 	const componentModules = await Promise.all(
@@ -20,7 +19,7 @@ export async function load() {
 		})
 	);
 
-	const docs = docModules.filter((u) => u!= '');
+	const docs = docModules.filter((u) => u != '');
 	const components = componentModules.filter((u) => u.path != '');
 	// console.log(components)
 

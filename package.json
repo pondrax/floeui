@@ -40,10 +40,11 @@
 	},
 	"devDependencies": {
 		"@iconify-json/bx": "^1.1.7",
-		"@inlang/sdk-js": "^0.11.7",
+		"@inlang/sdk-js": "^0.11.8",
 		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/kit": "^1.22.5",
+		"@sveltejs/kit": "^1.22.6",
 		"@sveltejs/package": "^2.2.1",
+		"@unocss/extractor-svelte": "^0.55.0",
 		"dayjs": "^1.11.9",
 		"eslint": "^8.47.0",
 		"eslint-config-prettier": "^9.0.0",
@@ -64,8 +65,5 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-		"@unocss/extractor-svelte": "^0.55.0"
-	}
+	"type": "module"
 }

@@ -8,7 +8,7 @@ const base = [
 	['active', '!bg-primary !text-primary-content'],
 	[
 		'demo-preview',
-		'flex flex-wrap justify-center items-start relative w-full gap-2 p-3 overflow-auto bg-dotted align-start rounded-xl rounded-tl-none'
+		'flex flex-wrap justify-center items-start relative w-full min-h-12 gap-2 p-3 overflow-auto bg-dotted align-start rounded-xl rounded-tl-none'
 	],
 	['demo-code', 'p-3 bg-neutral text-white text-xs whitespace-pre-wrap rounded-xl rounded-tl-none'],
 	[

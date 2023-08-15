@@ -8,7 +8,7 @@ import {
 	// TransformResult,
 	transformerVariantGroup
 } from 'unocss';
-import extractorSvelte from '@unocss/extractor-svelte'
+import extractorSvelte from '@unocss/extractor-svelte';
 import presetFloe from './src/lib/index.js';
 
 export default defineConfig({

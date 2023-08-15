@@ -1,9 +1,9 @@
 <script context="module">
-	export const heading = 'Layout';
+	export const heading = 'Display';
 </script>
 
 <script>
-  import { fnCopy, fnPrism, fnRef, fnTab } from "$lib/directives/index.js";
+	import { fnPrism, fnRef, fnTab, fnCopy } from '$lib/directives/index.js';
 </script>
 
 <div flex flex-col gap-5>
@@ -14,15 +14,14 @@
     <h3 font-semibold cursor-pointer hover-text-primary>## Drawer</h3>
     <div use:fnTab use:fnCopy={"[data-code]"}>
       <div data-title="Preview" demo-preview h-100 use:fnRef={"[data-code]"} />
-      <!-- prettier-ignore -->
-      <!-- <label for="drawer" class="drawer-overlay"></label>  -->
       <div data-title="Code" demo-code use:fnPrism={`
-<script>
+
+(script)
   let open=false;
   function openDrawer(){
     open=true;
   }
-</script>
+(script)
 
 <div drawer bg-base h-full w-full>
   <div drawer-side  bg-base lg:drawer-open class:drawer-open={open}>

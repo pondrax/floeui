@@ -90,11 +90,13 @@
           </div>
           <div calendar-days>
             {#each days as day}
-              <!-- svelte-ignore a11y-click-events-have-key-events -->
               <div
+                tabindex="0"
+                role="button"
                 class:border-primary={day.current}
                 class:disabled={day.disabled}
                 on:click={() => (currentDate = day.date)}
+                on:keydown
               >
                 {day.date?.format("D")}
                 <!-- {day.date?.format("MM-DD")} -->
@@ -104,8 +106,7 @@
           </div>
         </div>
       </div>
-      <!-- use:fnRef={"[data-code]"} /> -->
-      <!-- prettier-ignore -->
+      
       <div data-title="Code" demo-code use:fnPrism={
 `<div calendar>
   <ul calendar-title>

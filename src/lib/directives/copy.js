@@ -1,5 +1,7 @@
 // @unocss-include
-export default (node, html) => {
+import { ref } from './ref.js';
+export default (node, code) => {
+	let html = ref(node, code);
 	const content = [
 		`<button btn="~ xs" py-1><i i-bx-copy></i> copy</button>`,
 		`<button btn="~ xs" py-1><i i-bx-copy></i> copied</button>`

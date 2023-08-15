@@ -49,10 +49,9 @@
 	</aside>
 	<section drawer-content>
 		<div bg-baseA rounded-box p-5 h-full overflow-auto>
-			<button btn="~ sm outline" bg-base on:click={() => (sidebarOpen = !sidebarOpen)} mb-5>
+			<button drawer-toggle btn="~ sm outline" bg-base on:click={() => (sidebarOpen = !sidebarOpen)} mb-5>
 				<i i-bx-menu />
 			</button>
-			{sidebarOpen}
 			<slot />
 		</div>
 	</section>

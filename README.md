@@ -17,29 +17,26 @@ To create a production version of your app:
 ```js
 // unocss.config.ts
 import {
-  defineConfig,
-  presetUno,
-  presetIcons,
-  presetAttributify,
-  transformerDirectives,
-  transformerAttributifyJsx,
-} from "unocss"
+	defineConfig,
+	presetUno,
+	presetIcons,
+	presetAttributify,
+	transformerDirectives,
+	transformerAttributifyJsx
+} from 'unocss';
 
-import presetFloe from 'floeui'
+import presetFloe from 'floeui';
 
 export default defineConfig({
-  transformers: [
-    transformerDirectives(),
-    transformerAttributifyJsx()
-  ],
-  presets:[
-    presetUno(),
-    presetAttributify(),
-    presetIcons({
-      scale: 1.3
-    }),
-    presetFloe()
-  ],
+	transformers: [transformerDirectives(), transformerAttributifyJsx()],
+	presets: [
+		presetUno(),
+		presetAttributify(),
+		presetIcons({
+			scale: 1.3
+		}),
+		presetFloe()
+	]
 });
 ```
 
@@ -51,12 +48,14 @@ export default defineConfig({
 </summary>
 
 - Actions
+
   - [x] Button
   - [x] Dropdown
   - [x] Modal
-  - [ ] ~~Swap~~ 
+  - [ ] ~~Swap~~
 
 - Data display
+
   - [x] Alert
   - [x] Avatar
   - [x] Badge
@@ -71,7 +70,7 @@ export default defineConfig({
   - [ ] Empty placeholder
   - [x] Kbd
   - [ ] Loading
-  - [x] Progress & Radial 
+  - [x] Progress & Radial
   - [ ] Stat
   - [x] Table
   - [ ] Tag
@@ -90,8 +89,8 @@ export default defineConfig({
   - [x] Textarea
   - [x] Toggle
   - [ ] Upload
-  
 - Layout
+
   - [ ] Artboard
   - [ ] Button group
   - [ ] Divider
@@ -104,6 +103,7 @@ export default defineConfig({
   - [ ] Stack
 
 - Navigation
+
   - [ ] Bottom Navigation
   - [ ] Breadcrumbs
   - [ ] Link
@@ -118,6 +118,5 @@ export default defineConfig({
   - [ ] Code
   - [ ] Phone
   - [ ] Window
-
 
 </details>

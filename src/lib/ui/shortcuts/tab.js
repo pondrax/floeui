@@ -1,3 +1,5 @@
+// @unocss-include
+
 const tabs = [
 	['tab-boxed', ['btn'].join(' '), { layer: 'components tab' }],
 	['tab-active', ['!font-bold !border-base-content'].join(' '), { layer: 'components tab' }],

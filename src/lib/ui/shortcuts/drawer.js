@@ -3,7 +3,7 @@ const drawer = [
 	[
 		'drawer',
 		[
-			'relative flex h-full',
+			'relative flex h-full'
 			// 'md:( flex-nowrap justify-start)',
 			// 'bg-base-a shadow-lg py-3 px-6 rounded-box'
 		].join(' '),
@@ -12,7 +12,7 @@ const drawer = [
 	[
 		'drawer-content',
 		[
-			' w-full p-2 h-full flex flex-col',
+			' w-full p-2 h-full flex flex-col'
 			// 'md:( flex-nowrap justify-start)',
 			// 'bg-base-a shadow-lg py-3 px-6 rounded-box'
 		].join(' '),
@@ -21,9 +21,7 @@ const drawer = [
 	[
 		'drawer-open',
 		[
-			'!visible !ml-0',
-			// 'md:( flex-nowrap justify-start)',
-			// 'bg-base-a shadow-lg py-3 px-6 rounded-box'
+			'!visible !ml-0'
 		].join(' '),
 		{ layer: 'components drawer' }
 	],
@@ -34,11 +32,16 @@ const drawer = [
 			'relative ml--1000 transition-margin',
 			'overflow-y-auto overscroll-contain',
 			'invisible'
-			// 'md:( flex-nowrap justify-start)',
-			// 'bg-base-a shadow-lg py-3 px-6 rounded-box'
 		].join(' '),
 		{ layer: 'components drawer' }
 	],
+	[
+		'drawer-toggle',
+		[
+			'visible lg:invisible'
+		].join(' '),
+		{ layer: 'components drawer' }
+	]
 ];
 
 export default drawer;

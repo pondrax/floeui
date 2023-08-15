@@ -29,9 +29,9 @@
 				data-title="Code"
 				demo-code
 				use:fnPrism={`
-<script>
+(script)
   let modalOpen = false;
-</script>
+(/script)
 
 <button btn on:click={() => (modalOpen = true)}>Toggle Modal</button>
 
