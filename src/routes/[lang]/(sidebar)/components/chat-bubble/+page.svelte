@@ -8,20 +8,19 @@
 
 <div flex flex-col gap-5>
   <div>
-    <h2 text-xl cursor-pointer hover-text-primary># Card</h2>
+    <h2 text-xl cursor-pointer hover-text-primary># Chat Bubble</h2>
   </div>
   <div>
-    <h3 font-semibold cursor-pointer hover-text-primary>## Card</h3>
+    <h3 font-semibold cursor-pointer hover-text-primary>## Chat</h3>
     <div use:fnTab use:fnCopy={"[data-code]"}>
       <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
       <!-- prettier-ignore -->
-      <div data-title="Code" demo-code use:fnPrism={
-`<div card lg:flex-row>
-  <img src="https://placeimg.com/400/200/arch" alt="Album" />
-  <div>
-    <h2 text-xl>Card Title</h2>
-    <p>Card content</p>
-  </div>
+      <div data-title="Code" demo-code use:fnPrism={`
+<div class="chat chat-start">
+  <div class="chat-bubble">It's over Anakin, <br/>I have the high ground.</div>
+</div>
+<div class="chat chat-end">
+  <div class="chat-bubble">You underestimate my power!</div>
 </div>`}
       />
     </div>

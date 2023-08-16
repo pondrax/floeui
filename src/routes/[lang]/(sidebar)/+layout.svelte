@@ -1,5 +1,6 @@
 <script>
 	import { fnTheme } from '$lib/directives/index.js';
+	import { language } from '@inlang/sdk-js';
 	export let data;
 	let sidebarOpen = false;
 </script>
@@ -23,21 +24,32 @@
 			</form>
 		</div>
 		<ul menu overflow-auto bg-base>
-			{#each data.docs as {path, active}}
+			{#each data.docs as { path, active }}
 				<li>
-					<a href={'/docs/' + path} class:bg-base-b={active} capitalize>{path.replaceAll('-', ' ')}</a>
+					<a href={'/' + language + '/docs/' + path} class:bg-base-b={active} capitalize
+						>{path.replaceAll('-', ' ')}</a
+					>
 				</li>
 			{/each}
 			<li></li>
 			<li>
-				<a href="/components">All Components</a>
+				<a href={'/' + language + '/components'}>All Components</a>
 			</li>
 
 			{#each data.components as [heading, links]}
 				<li menu-heading capitalize>{heading}</li>
-				{#each links as {path, active}}
+				{#each links as { path, active, action }}
 					<li>
-						<a href={'/components/' + path} class:bg-base-b={active} capitalize>{path.replaceAll('-', ' ')}</a>
+						<a href={'/' + language + '/components/' + path} class:bg-base-b={active}>
+							<span capitalize>
+								{path.replaceAll('-', ' ')}
+							</span>
+							{#if action}
+								<div ml-auto>
+									<span badge="~ xs primary">{action}</span>
+								</div>
+							{/if}
+						</a>
 					</li>
 				{/each}
 				<li></li>

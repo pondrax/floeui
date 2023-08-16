@@ -1,6 +1,6 @@
 import { groupBy } from '$lib/utils.js';
 
-export async function load({url}) {
+export async function load({ url }) {
 	const docModules = await Promise.all(
 		Object.entries(import.meta.glob('./docs/**/+page.svelte')).map(async ([path]) => {
 			path = path.replace(/(\.|\/|docs|\+page\.svelte)/g, '');
@@ -15,10 +15,11 @@ export async function load({url}) {
 		Object.entries(import.meta.glob('./components/**/+page.svelte')).map(async ([path, fn]) => {
 			path = path.replace(/(\.|\/|components|\+page\.svelte)/g, '');
 			const props = await fn();
-			const active = url.pathname.includes(path)
+			const active = url.pathname.split('/').pop() == path
 			return {
 				path,
 				active,
+				action: props?.action || null,
 				heading: props?.heading || 'Input'
 			};
 		})

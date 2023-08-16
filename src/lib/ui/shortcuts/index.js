@@ -7,6 +7,7 @@ import button from './button.js';
 import card from './card.js';
 import carousel from './carousel.js';
 import calendar from './calendar.js';
+import chat from './chat.js';
 import collapse from './collapse.js';
 import dropdown from './dropdown.js';
 import drawer from './drawer.js';
@@ -32,6 +33,7 @@ export default [
 	...card,
 	...carousel,
 	...calendar,
+	...chat,
 	...checkbox,
 	...collapse,
 	...dropdown,

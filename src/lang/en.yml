@@ -1,7 +1,16 @@
 intro: The following is a list of all the commands you can use with the bot.
+attr: Attribute
+type: Type
+desc: Description
+search: Search...
+accordion:
+  desc: >-
+    Accordion is used for showing and hiding content but only one item can stay
+    open at a time.
 button:
   description: Buttons allow the user to take actions or make choices.
 dropdown:
   description: Dropdown can open a menu or any other element when the button is clicked.
 alert:
   description: Alert informs users about important events.
+description: i

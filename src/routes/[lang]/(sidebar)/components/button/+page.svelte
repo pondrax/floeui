@@ -80,6 +80,30 @@
 </div>`}/>
     </div>
   </div>
+
+  
+  <div>
+    <h3 font-semibold cursor-pointer hover-text-primary>## Group Buttons</h3>
+    <div use:fnTab use:fnCopy={"[data-code]"}>
+      <div data-title="Preview" demo-preview use:fnRef={"[data-code]"} />
+      <!-- prettier-ignore -->
+      <div data-title="Code" demo-code use:fnPrism={
+`<div group-x-rounded>
+  <button btn>1</button>
+  <button btn="~ primary">2</button>
+  <button btn>3</button>
+  <button btn>4</button>
+</div>
+<div group-y-rounded>
+  <button btn>1</button>
+  <button btn>2</button>
+  <button btn>3</button>
+  <button btn>4</button>
+</div>`}/>
+    </div>
+  </div>
+
+
   <div>
     <h3 font-semibold cursor-pointer hover-text-primary>## Buttons Link & Input</h3>
     <div use:fnTab use:fnCopy={"[data-code]"}>

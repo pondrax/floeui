@@ -20,7 +20,7 @@
 				use:fnPrism={`
 <div tooltip bg-primary data-tip="Ini adalah &#xa; tooltip">
   <div avatar w-40>
-    <img src="https://api.lorem.space/image/album?w=300&h=150" alt="avatar"/>
+    <img src="https://picsum.photos/200" alt="avatar"/>
   </div>
 </div>`}
 			/>
@@ -37,7 +37,7 @@
 				use:fnPrism={`
 <div tooltip="~ open" data-tip="Ini adalah &#xa; tooltip">
   <div avatar w-40>
-    <img src="https://api.lorem.space/image/album?w=300&h=150" alt="avatar"/>
+    <img src="https://picsum.photos/200" alt="avatar"/>
   </div>
 </div>`}
 			/>
@@ -54,7 +54,7 @@
 				use:fnPrism={`
 <div tooltip="~ bottom" bg-primary data-tip="Ini adalah &#xa; tooltip">
   <div avatar w-40>
-    <img src="https://api.lorem.space/image/album?w=300&h=150" alt="avatar"/>
+    <img src="https://picsum.photos/200" alt="avatar"/>
   </div>
 </div>`}
 			/>
@@ -71,7 +71,7 @@
 				use:fnPrism={`
 <div tooltip="~ left" bg-primary data-tip="Ini adalah &#xa; tooltip">
   <div avatar w-40>
-    <img src="https://api.lorem.space/image/album?w=300&h=150" alt="avatar"/>
+    <img src="https://picsum.photos/200" alt="avatar"/>
   </div>
 </div>`}
 			/>
@@ -88,7 +88,7 @@
 				use:fnPrism={`
 <div tooltip="~ right" bg-primary data-tip="Ini adalah &#xa; tooltip">
   <div avatar w-40>
-    <img src="https://api.lorem.space/image/album?w=300&h=150" alt="avatar"/>
+    <img src="https://picsum.photos/200" alt="avatar"/>
   </div>
 </div>`}
 			/>

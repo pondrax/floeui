@@ -20,7 +20,7 @@ export async function defineConfig(env) {
 			pluginYaml({
 				pathPattern: './src/lang/{language}.yml'
 			}),
-			sdkPlugin({ languageNegotiation: { strategies: [{ type: 'localStorage' }] } }),
+			sdkPlugin({ languageNegotiation: { strategies: [{ type: 'url' }] } }),
 			standardLintRules()
 		]
 	};

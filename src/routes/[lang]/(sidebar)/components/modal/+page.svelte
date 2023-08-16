@@ -1,5 +1,6 @@
 <script context="module">
 	export const heading = 'Action';
+	export const action = 'fnModal'
 </script>
 
 <script>
