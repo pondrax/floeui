@@ -3,14 +3,22 @@ attr: Attribute
 type: Type
 desc: Description
 search: Search...
+
 accordion:
   desc: >-
     Accordion is used for showing and hiding content but only one item can stay
     open at a time.
-button:
-  description: Buttons allow the user to take actions or make choices.
-dropdown:
-  description: Dropdown can open a menu or any other element when the button is clicked.
 alert:
-  description: Alert informs users about important events.
-description: i
+  desc: Alert informs users about important events.
+avatar:
+  desc: >-
+    Avatars are used to show a thumbnail representation of an individual or
+    business in the interface.
+badge:
+  desc: Badges are used to inform the user of the status of specific data.
+breadcrumb:
+  desc: Breadcrumbs helps users to navigate through the website.
+button:
+  desc: Buttons allow the user to take actions or make choices.
+dropdown:
+  desc: Dropdown can open a menu or any other element when the button is clicked.

@@ -18,13 +18,7 @@ const drawer = [
 		].join(' '),
 		{ layer: 'components drawer' }
 	],
-	[
-		'drawer-open',
-		[
-			'!visible !ml-0'
-		].join(' '),
-		{ layer: 'components drawer' }
-	],
+	['drawer-open', ['!visible !ml-0'].join(' '), { layer: 'components drawer' }],
 	[
 		'drawer-side',
 		[
@@ -35,13 +29,7 @@ const drawer = [
 		].join(' '),
 		{ layer: 'components drawer' }
 	],
-	[
-		'drawer-toggle',
-		[
-			'flex lg:hidden'
-		].join(' '),
-		{ layer: 'components drawer' }
-	]
+	['drawer-toggle', ['flex lg:hidden'].join(' '), { layer: 'components drawer' }]
 ];
 
 export default drawer;

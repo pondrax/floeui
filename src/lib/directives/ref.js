@@ -10,7 +10,7 @@ export const ref = (node, target) => {
 	const ref = node?.parentNode?.querySelector(target);
 	const prop = target.replace(/\[(.*)\]/g, '$1');
 	// console.log(ref.getAttribute(prop))
-	return ref.getAttribute(prop)
+	return ref.getAttribute(prop);
 	// console.log(prop)
 	// return ref?.getAttribute(prop) || '';
 };
@@ -25,7 +25,7 @@ export const ref = (node, target) => {
 export default (node, target) => {
 	setTimeout(() => {
 		let html = ref(node, target);
-		if (html){
+		if (html) {
 			// html = html.replace('<script>','(script)').replace('</script>','(script)')
 			node.innerHTML = html;
 		}

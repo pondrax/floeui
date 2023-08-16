@@ -43,7 +43,7 @@ export default function initializeThemeSelector(node, theme) {
 	themeDiv.className = 'dropdown';
 	themeDiv.innerHTML = `
     <!-- Dropdown button -->
-    <button btn="~ sm outline" bg-base>
+    <button btn="~ sm outline">
       <i i-bx-extension></i>
       <span>Theme</span>
     </button>

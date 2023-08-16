@@ -19,8 +19,11 @@
 				</div>
 			</div>
 			<form form-control>
-				<!-- svelte-ignore a11y-autofocus -->
-				<input input name="q" placeholder="Search" autofocus />
+				<div relative>
+					<div flex absolute left-2><i i-bx-search/></div>
+					<!-- svelte-ignore a11y-autofocus -->
+					<input input name="q" placeholder="Search" autofocus autocomplete="off" pl-8/>
+				</div>
 			</form>
 		</div>
 		<ul menu overflow-auto bg-base>
@@ -62,7 +65,6 @@
 				<button
 					drawer-toggle
 					btn="~ sm outline"
-					bg-base
 					on:click={() => (sidebarOpen = !sidebarOpen)}
 					mb-5
 				>

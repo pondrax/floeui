@@ -15,19 +15,15 @@ const collapse = [
 	],
 	[
 		'collapse-title',
-		[
-			'relative cursor-pointer font-light ',
-		].join(' '),
+		['relative cursor-pointer font-light '].join(' '),
 		{ layer: 'components collapse' }
 	],
 	[
 		'collapse-open',
-		[
-			'children-[:not(.collapse-title,[collapse-title])]-(h-auto py-2 overflow-auto)'
-		].join(' '),
+		['children-[:not(.collapse-title,[collapse-title])]-(h-auto py-2 overflow-auto)'].join(' '),
 		{ layer: 'components collapse' }
 	],
-	
+
 	[
 		'collapse-arrow',
 		[
@@ -36,8 +32,7 @@ const collapse = [
 			'children-[:is(.collapse-title,[collapse-title])]-after-(border-t border-r border-base-content:50 rotate-135 transition-all )'
 		].join(' '),
 		{ layer: 'components collapse' }
-	],
-	
+	]
 ];
 
 export default collapse;

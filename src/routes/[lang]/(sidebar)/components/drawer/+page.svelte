@@ -4,12 +4,53 @@
 
 <script>
 	import { fnPrism, fnRef, fnTab, fnCopy } from '$lib/directives/index.js';
+  import { i } from '@inlang/sdk-js';
+	
+	let properties = [
+  { type:'component', attr: 'drawer', desc: 'The root container' },
+  { type:'component', attr: 'drawer-toggle', desc: 'For the hidden checkbox that controls the drawer' },
+  { type:'component', attr: 'drawer-content', desc: 'Container for all page content' },
+  { type:'component', attr: 'drawer-side', desc: 'The sidebar container' },
+  { type:'component', attr: 'drawer-overlay', desc: 'The label covers the content when drawer is open' },
+  { type:'modifier', attr: 'drawer-end', desc: 'puts drawer to the right' },
+  { type:'responsive', attr: 'drawer-open', desc: 'Forces the drawer to be open' },
+];
 </script>
 
-<div flex flex-col gap-5>
-  <div>
-    <h2 text-xl cursor-pointer hover-text-primary># Drawer</h2>
-  </div>
+<div flex flex-col gap-10 py-48>
+	<div>
+		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Drawer</h2>
+		<p p-3>{i('drawer.desc')}</p>
+	</div>
+
+	<div bg-base rounded-xl p-2 mx-3>
+		<div max-h-100 overflow-auto>
+			<table table table-rounded w-full>
+				<thead>
+					<tr bg-base-b sticky top-0>
+						<th w-48>
+							<input input placeholder={i('search')} />
+						</th>
+						<th>{i('type')}</th>
+						<th>{i('desc')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{#each properties as { type, attr, desc }}
+						<tr>
+							<td>{attr}</td>
+							<td>
+								<span badge class:badge-primary={type == 'component'}>{type}</span>
+							</td>
+							<td>{desc}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
   <div>
     <h3 font-semibold cursor-pointer hover-text-primary>## Drawer</h3>
     <div use:fnTab use:fnCopy={"[data-code]"}>

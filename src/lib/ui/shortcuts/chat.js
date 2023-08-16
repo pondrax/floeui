@@ -1,37 +1,19 @@
 // @unocss-include
 
 const chat = [
-  [
-    'chat',
-    [
-      'grid grid-cols-2 gap-x-3 py-1 ',
-    ].join(' '),
-    { layer: 'components chat' },
-  ],
-  [
-    'chat-image',
-    'self-end row-span-2',
-    { layer: 'components chat-image' },
-  ],
-  [
-    'chat-header',
-    'text-sm row-start-1',
-    { layer: 'components chat-header' },
-  ],
-  [
-    'chat-footer',
-    'text-sm row-start-3',
-    { layer: 'components chat-footer' },
-  ],
-  [
-    'chat-bubble',
-    [
-      'rounded-box block w-fit px-4 py-2 relative ',
-      'min-height: 2.75rem ',
-      'min-width: 2.75rem',
-    ].join(' '),
-    { layer: 'components chat-bubble' },
-  ],
+	['chat', ['grid grid-cols-2 gap-x-3 py-1 '].join(' '), { layer: 'components chat' }],
+	['chat-image', 'self-end row-span-2', { layer: 'components chat-image' }],
+	['chat-header', 'text-sm row-start-1', { layer: 'components chat-header' }],
+	['chat-footer', 'text-sm row-start-3', { layer: 'components chat-footer' }],
+	[
+		'chat-bubble',
+		[
+			'rounded-box block w-fit px-4 py-2 relative ',
+			'min-height: 2.75rem ',
+			'min-width: 2.75rem'
+		].join(' '),
+		{ layer: 'components chat-bubble' }
+	]
 ];
 // const chat = [
 //   [

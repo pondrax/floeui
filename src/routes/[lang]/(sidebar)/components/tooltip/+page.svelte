@@ -4,12 +4,53 @@
 
 <script>
 	import { fnCopy, fnPrism, fnTab, fnRef } from '$lib/directives/index.js';
+	import { i } from '@inlang/sdk-js';
+	
+	let properties = [
+		{ type: 'component', attr: 'collapse', desc: 'Container element' },
+		{ type: 'component', attr: 'collapse-title', desc: 'Title element' },
+		{ type: 'component', attr: 'collapse-content', desc: 'Container for content' },
+		{ type: 'modifier', attr: 'collapse-arrow', desc: 'Adds arrow icon' },
+		{ type: 'modifier', attr: 'collapse-plus', desc: 'Adds plus/minus icon' },
+		{ type: 'modifier', attr: 'collapse-open', desc: 'Force open' },
+		{ type: 'modifier', attr: 'collapse-close', desc: 'Force close' }
+	];
 </script>
 
-<div flex flex-col gap-10>
+<div flex flex-col gap-10 py-48>
 	<div>
-		<h2 text-xl cursor-pointer hover-text-primary># Tooltip</h2>
+		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Tooltip</h2>
+		<p p-3>{i('tooltip.desc')}</p>
 	</div>
+
+	<div bg-base rounded-xl p-2 mx-3>
+		<div max-h-100 overflow-auto>
+			<table table table-rounded w-full>
+				<thead>
+					<tr bg-base-b sticky top-0>
+						<th w-48>
+							<input input placeholder={i('search')} />
+						</th>
+						<th>{i('type')}</th>
+						<th>{i('desc')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{#each properties as { type, attr, desc }}
+						<tr>
+							<td>{attr}</td>
+							<td>
+								<span badge class:badge-primary={type == 'component'}>{type}</span>
+							</td>
+							<td>{desc}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
 	<div>
 		<h3 font-semibold cursor-pointer hover-text-primary>## Tooltip Top (default)</h3>
 		<div use:fnTab use:fnCopy={'[data-code]'}>
