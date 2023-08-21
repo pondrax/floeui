@@ -1,6 +1,6 @@
 {
 	"name": "floeui",
-	"version": "0.0.24",
+	"version": "0.0.24~fix",
 	"description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
 	"keywords": [
 		"unocss",
@@ -36,7 +36,7 @@
 			"types": "./dist/directives/index.d.ts",
 			"default": "./dist/directives/index.js"
 		},
-		"./dist/directives/*": {
+		"./directives/*": {
 			"types": "./dist/directives/*.d.ts",
 			"default": "./dist/directives/*.js"
 		}
