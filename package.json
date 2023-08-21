@@ -1,6 +1,6 @@
 {
 	"name": "floeui",
-	"version": "0.0.22",
+	"version": "0.0.23",
 	"description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
 	"keywords": [
 		"unocss",
@@ -28,7 +28,7 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"default": "./dist/index.js"
 		}
 	},
 	"files": [
@@ -39,6 +39,9 @@
 	"peerDependencies": {
 		"svelte": "^4.0.0"
 	},
+	"dependencies": {
+		"colord": "^2.9.3"
+	},
 	"devDependencies": {
 		"@iconify-json/bx": "^1.1.7",
 		"@inlang/sdk-js": "^0.11.8",
@@ -47,7 +50,6 @@
 		"@sveltejs/kit": "^1.22.6",
 		"@sveltejs/package": "^2.2.1",
 		"@unocss/extractor-svelte": "^0.55.0",
-		"colord": "^2.9.3",
 		"dayjs": "^1.11.9",
 		"eslint": "^8.47.0",
 		"eslint-config-prettier": "^9.0.0",
