@@ -14,7 +14,7 @@
 	"license": "Apache-2.0",
 	"scripts": {
 		"dev": "vite dev",
-		"start": "npm build",
+		"start": "node build",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -32,14 +32,9 @@
 		},
 		"./floe.css": "./dist/floe.css",
 		"./ui/*.css": "./dist/ui/styles/*.css",
-		"./directives": {
-			"types": "./dist/directives/index.d.ts",
-			"default": "./dist/directives/index.js"
-		},
-		"./directives/*": {
-			"types": "./dist/directives/*.d.ts",
-			"default": "./dist/directives/*.js"
-		}
+		"./directives": "./dist/directives/index.js",
+		"./directives/*": "./dist/directives/*.js",
+		"./dist/directives/*": "./dist/directives/*.js"
 	},
 	"files": [
 		"dist",

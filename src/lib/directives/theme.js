@@ -5,7 +5,7 @@
  * @param {HTMLElement} node - The HTML element to which the theme selector will be appended.
  * @returns {object} An object with a `destroy` method to clean up event listeners.
  */
-export default function initializeThemeSelector(node, theme) {
+export default function initializeThemeSelector(node, opt = {theme : 'cupcake', pos : 'end'}) {
 	/** @type {string[]} */
 	const THEMES = [
 		'light',
@@ -40,7 +40,7 @@ export default function initializeThemeSelector(node, theme) {
 	];
 
 	const themeDiv = document.createElement('div');
-	themeDiv.className = 'dropdown';
+	themeDiv.className = 'dropdown ' + (opt.pos == 'end' ? 'dropdown-end' : '');
 	themeDiv.innerHTML = `
     <!-- Dropdown button -->
     <button btn="~ sm outline">
@@ -48,10 +48,10 @@ export default function initializeThemeSelector(node, theme) {
       <span>Theme</span>
     </button>
     <!-- Theme options list -->
-    <ul menu bg-base rounded-box shadow h-60 overflow-auto>
+    <ul menu bg-base rounded-box shadow h-60 overflow-auto gap-.5>
       ${THEMES.map(
-				(name) => `<li>
-        <button data-theme=${name} bg-transparent capitalize gap-1 children-rounded-xl children-min-w-2 children-h-5>
+		(name) => `<li>
+        <button data-theme=${name} bg-base text-base-content capitalize gap-1 children-rounded-xl children-min-w-2 children-h-5>
           <span mr-auto>${name}</span>
           <span bg-primary></span>
           <span bg-secondary></span>
@@ -59,7 +59,7 @@ export default function initializeThemeSelector(node, theme) {
           <span bg-neutral></span>
         </button>
       </li>`
-			).join('')}
+	).join('')}
     </ul>`;
 
 	node.append(themeDiv);
@@ -67,7 +67,7 @@ export default function initializeThemeSelector(node, theme) {
 	if (localStorage.theme) {
 		setTheme(localStorage.theme);
 	} else {
-		setTheme(theme);
+		setTheme(opt.theme);
 	}
 
 	/**
@@ -76,7 +76,7 @@ export default function initializeThemeSelector(node, theme) {
 	 * @param {string} name - The name of the theme to set.
 	 */
 	function setTheme(name) {
-		theme = name;
+		opt.theme = name;
 		localStorage.theme = name;
 		document.querySelector('html').dataset.theme = name;
 	}

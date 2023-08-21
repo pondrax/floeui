@@ -20,9 +20,9 @@
 			</div>
 			<form form-control>
 				<div relative>
-					<div flex absolute left-2><i i-bx-search/></div>
+					<div flex absolute left-2><i i-bx-search /></div>
 					<!-- svelte-ignore a11y-autofocus -->
-					<input input name="q" placeholder="Search" autofocus autocomplete="off" pl-8/>
+					<input input name="q" placeholder="Search" autofocus autocomplete="off" pl-8 />
 				</div>
 			</form>
 		</div>
@@ -61,13 +61,8 @@
 	</aside>
 	<section drawer-content>
 		<div bg-baseA rounded-box p-5 h-full overflow-auto>
-			<div use:fnTheme flex gap-1>
-				<button
-					drawer-toggle
-					btn="~ sm outline"
-					on:click={() => (sidebarOpen = !sidebarOpen)}
-					mb-5
-				>
+			<div use:fnTheme={{ theme: 'cupcake', pos: 'end' }} flex justify-between mb-10>
+				<button drawer-toggle btn="~ sm outline" on:click={() => (sidebarOpen = !sidebarOpen)}>
 					<i i-bx-menu />
 				</button>
 			</div>
