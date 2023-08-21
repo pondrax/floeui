@@ -26,6 +26,9 @@ devDependencies:
   '@unocss/extractor-svelte':
     specifier: ^0.55.0
     version: 0.55.0
+  colord:
+    specifier: ^2.9.3
+    version: 2.9.3
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
@@ -1331,6 +1334,10 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    dev: true
+
+  /colord@2.9.3:
+    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
     dev: true
 
   /colorette@2.0.20:
