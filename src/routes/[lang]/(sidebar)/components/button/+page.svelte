@@ -3,7 +3,7 @@
 </script>
 
 <script>
-	import { fnPrism, fnTab, fnCopy, fnRef } from '$lib/directives/index.js';
+	import { fnPrism, fnTab, fnCopy, fnRef } from '$lib/directives.js';
 	import { i } from '@inlang/sdk-js';
 
 	let properties = [

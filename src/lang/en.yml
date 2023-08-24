@@ -3,6 +3,8 @@ attr: Attribute
 type: Type
 desc: Description
 search: Search...
+fn:
+  usage: Function Usage
 accordion:
   desc: >-
     Accordion is used for showing and hiding content but only one item can stay

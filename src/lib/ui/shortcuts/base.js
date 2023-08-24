@@ -5,6 +5,7 @@ export const sizeSchemes = 'xs|sm|lg|xl|2xl|3xl|4xl';
 export const roundedSchemes = 'square|circle';
 
 const base = [
+	['animate-rainbow','animate-_rainbow animate-infinite animate-alternate'],
 	['active', '!bg-primary !text-primary-content'],
 	[
 		'demo-preview',

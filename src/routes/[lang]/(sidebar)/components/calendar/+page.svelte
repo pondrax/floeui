@@ -5,7 +5,7 @@
 
 <script>
 	import { browser } from '$lib/utils.js';
-	import { fnCopy, fnPrism, fnRef, fnTab } from '$lib/directives/index.js';
+	import { fnCalendar, fnCopy, fnPrism, fnRef, fnTab } from '$lib/directives.js';
 	import dayjs from 'dayjs';
 
 	if (browser) {
@@ -37,9 +37,9 @@
   import { i } from '@inlang/sdk-js';
 	
 	let properties = [
-		{ type: 'component', attr: 'collapse', desc: 'Container element' },
-		{ type: 'component', attr: 'collapse-title', desc: 'Title element' },
-		{ type: 'component', attr: 'collapse-content', desc: 'Container for content' },
+		{ type: 'component', attr: 'calendar', desc: 'Container element' },
+		{ type: 'component', attr: 'calendar-title', desc: 'Title element' },
+		{ type: 'component', attr: 'calendar-days', desc: 'Container for day' },
 		{ type: 'modifier', attr: 'collapse-arrow', desc: 'Adds arrow icon' },
 		{ type: 'modifier', attr: 'collapse-plus', desc: 'Adds plus/minus icon' },
 		{ type: 'modifier', attr: 'collapse-open', desc: 'Force open' },
@@ -100,6 +100,8 @@
 								>&gt;</button
 							>
 						</div>
+					</div>
+					<div calendar-title>
 						<div>su</div>
 						<div>mo</div>
 						<div>tu</div>
@@ -252,6 +254,24 @@
     <li disabled>11</li>
   </ul>
 </div>`}/>
+		</div>
+	</div>
+
+	<div>
+		<h3 font-semibold cursor-pointer hover-text-primary>
+			## Calendar 
+			<span badge="~ success">{i("fn.usage")}</span>
+		</h3>
+		<div use:fnTab use:fnCopy={'[data-code]'}>
+			<div data-title="Preview" demo-preview>
+				<div use:fnCalendar></div>
+			</div>
+			<div data-title="Code" demo-code use:fnPrism={
+`(script)
+	import { fnCalendar } from 'floeui/directives'
+(/script)
+
+<div use:fnCalendar></div>`}/>
 		</div>
 	</div>
 </div>

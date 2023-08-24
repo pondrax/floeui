@@ -18,11 +18,11 @@ const collapse = [
 		['relative cursor-pointer font-light '].join(' '),
 		{ layer: 'components collapse' }
 	],
-	[
-		'collapse-open',
-		['children-[:not(.collapse-title,[collapse-title])]-(h-auto py-2 overflow-auto)'].join(' '),
-		{ layer: 'components collapse' }
-	],
+	// [
+	// 	'collapse-open',
+	// 	['children-[:not(.collapse-title,[collapse-title])]-(h-auto py-2 overflow-auto)'].join(' '),
+	// 	{ layer: 'components collapse' }
+	// ],
 
 	[
 		'collapse-arrow',

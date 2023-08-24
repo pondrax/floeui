@@ -1,4 +1,5 @@
 // @unocss-include
+
 /**
  * Retrieves a specific attribute value from a referenced HTML element.
  *
@@ -6,13 +7,13 @@
  * @param {string} target - The CSS selector to find the target HTML element.
  * @returns {string} The attribute value from the referenced HTML element.
  */
-export const ref = (node, target) => {
-	const ref = node?.parentNode?.querySelector(target);
+export const ref = (node, target) => {	
+	const ref = node.parentNode.querySelector(target);
 	const prop = target.replace(/\[(.*)\]/g, '$1');
+	// console.log(node.parentNode.querySelector(target), node.querySelector(target))
+	// if(ref)
 	// console.log(ref.getAttribute(prop))
-	return ref.getAttribute(prop);
-	// console.log(prop)
-	// return ref?.getAttribute(prop) || '';
+	return ref?.getAttribute(prop) || '';
 };
 
 /**

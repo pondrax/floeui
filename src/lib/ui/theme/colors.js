@@ -22,7 +22,8 @@ const colors = {
 	warningContent: 'hsl(var(--wac))',
 	error: 'hsl(var(--er))',
 	errorContent: 'hsl(var(--erc))',
-	active: 'hsl(var(--p))'
+	active: 'var(--r)',
+	rainbow: 'var(--r)'
 };
 
 export default colors;

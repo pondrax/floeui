@@ -16,7 +16,7 @@ const calendar = [
 	],
 	[
 		'calendar-title',
-		['font-semibold', 'children-(p-2)'].join(' '),
+		['font-semibold', 'children-(p-1)'].join(' '),
 		{ layer: 'components calendar' }
 	],
 	['calendar-days', ['calendar-list'].join(' '), { layer: 'components calendar' }],

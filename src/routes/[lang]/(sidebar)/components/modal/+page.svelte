@@ -4,7 +4,7 @@
 </script>
 
 <script>
-	import { fnCopy, fnPrism, fnTab, fnModal } from '$lib/directives/index.js';
+	import { fnCopy, fnPrism, fnTab, fnModal } from '$lib/directives.js';
 	let modalOpen = false;
 	import { i } from '@inlang/sdk-js';
 	

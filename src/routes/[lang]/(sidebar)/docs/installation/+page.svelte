@@ -3,7 +3,7 @@
 </script>
 
 <script>
-	import { fnPrism, fnRef, fnTab, fnCopy } from '$lib/directives/index.js';
+	import { fnPrism, fnRef, fnTab, fnCopy } from '$lib/directives.js';
 </script>
 
 <div flex flex-col gap-5>

@@ -1,9 +1,13 @@
 <script>
-	import { fnTheme } from '$lib/directives/index.js';
+	import { fnTheme } from '$lib/directives.js';
 	import { language } from '@inlang/sdk-js';
 	export let data;
 	let sidebarOpen = false;
 </script>
+
+<svelte:head>
+	<title>{data.pageTitle} - FloeUI</title>
+</svelte:head>
 
 <div drawer bg-base h-screen>
 	<aside bg-base drawer-side lg-drawer-open class:drawer-open={sidebarOpen}>
@@ -12,7 +16,7 @@
 				<img src="/favicon.png" h-20 alt="logo" />
 				<div>
 					<h1 text-4xl font-bold class="text-#F8A696" mb--1>
-						Floe<span class="text-#677F27">UI</span>
+						Floe<span text-rainbow>UI</span>
 					</h1>
 					<!-- svelte-ignore illegal-attribute-character -->
 					<div text-xs text-base-content:50>By Svelte & UnoCSS</div>
@@ -43,7 +47,7 @@
 				<li menu-heading capitalize>{heading}</li>
 				{#each links as { path, active, action }}
 					<li>
-						<a href={'/' + language + '/components/' + path} class:bg-base-b={active}>
+						<a href={'/' + language + '/components/' + path} class:bg-active={active} class:text-neutral={active} hover-bg-active>
 							<span capitalize>
 								{path.replaceAll('-', ' ')}
 							</span>
@@ -61,7 +65,7 @@
 	</aside>
 	<section drawer-content>
 		<div bg-baseA rounded-box p-5 h-full overflow-auto>
-			<div use:fnTheme={{ theme: 'cupcake', pos: 'end' }} flex justify-between mb-10>
+			<div use:fnTheme={{ theme: 'cupcake', pos: 'start' }} flex gap-2 mb-10>
 				<button drawer-toggle btn="~ sm outline" on:click={() => (sidebarOpen = !sidebarOpen)}>
 					<i i-bx-menu />
 				</button>

@@ -4,7 +4,7 @@
 </script>
 
 <script>
-	import { fnCopy, fnPrism, fnRef, fnTab } from '$lib/directives/index.js';
+	import { fnCopy, fnBreadcrumbs, fnPrism, fnRef, fnTab } from '$lib/directives.js';
 	import { i } from '@inlang/sdk-js';
 
 	let properties = [{ type: 'component', attr: 'breadcrumbs', desc: 'Container element' }];
@@ -16,7 +16,7 @@
 		<p p-3>{i('breadcrumb.desc')}</p>
 	</div>
 
-	<div bg-base rounded-xl p-2 mx-3>
+	<div bg-base rounded-xl p-2>
 		<div max-h-100 overflow-auto>
 			<table table table-rounded w-full>
 				<thead>
@@ -58,7 +58,7 @@
 	</div>
 	<div>
 		<i i-bx-extension=""></i>
-		<h3 font-semibold cursor-pointer hover-text-primary>## Breadcrumb</h3>
+		<h3 font-semibold cursor-pointer hover-text-primary>## Breadcrumb With Icons</h3>
 		<div use:fnTab use:fnCopy={'[data-code]'}>
 			<div data-title="Preview" demo-preview use:fnRef={'[data-code]'} />
 			<!-- prettier-ignore -->
@@ -70,4 +70,28 @@
 </ul>`}/>
 		</div>
 	</div>
+
+	
+	<div>
+		<h3 font-semibold cursor-pointer hover-text-primary>
+			## Breadcrumb <span badge="~ success">{i("fn.usage")}</span>
+		</h3>
+		<div use:fnTab use:fnCopy={'[data-code]'}>
+			<div data-title="Preview" demo-preview use:fnBreadcrumbs={{
+				path:'/[lang]/home/documents/a-document',
+				lang: 'en'
+			}} />
+			<!-- prettier-ignore -->
+			<div data-title="Code" demo-code use:fnPrism={
+`(script)
+  import { fnBreadcrumbs } from 'floeui/directives';
+(/script)
+
+<div use:fnBreadcrumbs={{
+	path:'/[lang]/home/documents/a-document', 
+	lang: 'en'
+}}></div>`}/>
+		</div>
+	</div>
+	
 </div>

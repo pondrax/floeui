@@ -1,9 +1,10 @@
 // @unocss-include
-import { highlight, languages } from 'prismjs';
-import 'prism-svelte';
-import beautify from 'js-beautify';
 
-export default (node, code) => {
+export default async (node, code) => {
+	const {highlight, languages} =await import('prismjs');
+	await import('prism-svelte')
+	const beautify = await import('js-beautify')
+	
 	function format(html) {
 		html = beautify.html(html.replace('(script)', '<script>').replace('(/script)', '</script>'));
 		node.dataset.code = html;

@@ -29,8 +29,10 @@ export async function load({ url }) {
 	const docs = docModules.filter((u) => u.path != '');
 	const components = componentModules.filter((u) => u.path != '');
 	// console.log(components)
+	const pageTitle = url.pathname.split('/').pop().replace(/\b\w/g, (char) => char.toUpperCase())
 
 	return {
+		pageTitle,
 		docs: docs,
 		components: Object.entries(groupBy(components, (obj) => obj.heading))
 	};
