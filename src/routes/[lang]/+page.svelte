@@ -1,5 +1,5 @@
 <script>
-  import { locale } from '$lib/utils.js'
+  import { locale } from '$lib/lang.js'
   
 </script>
 <div p-6>

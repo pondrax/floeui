@@ -10,8 +10,13 @@
  * @returns {object} An object with `update` and `destroy` methods for managing the calendar.
  */
 export default async function initializeCalendar(node, opt = { current: new Date(), locale: 'en' }) {
+	let dayjs;
+	try{
+		dayjs = (await import('dayjs')).default;
+	}catch(e){
+		return {}
+	}
 	// Import required modules
-	const dayjs = (await import('dayjs')).default;
 	const localeData = (await import('dayjs/plugin/localeData')).default;
 	const isSameOrBefore = (await import('dayjs/plugin/isSameOrBefore')).default;
 	dayjs.extend(localeData).extend(isSameOrBefore);

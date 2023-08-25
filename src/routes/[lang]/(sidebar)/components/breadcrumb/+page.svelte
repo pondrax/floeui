@@ -5,14 +5,14 @@
 
 <script>
 	import { fnCopy, fnBreadcrumbs, fnPrism, fnRef, fnTab } from '$lib/directives.js';
-	import { t, locale, locales } from '$lib/utils.js'
+	import { t} from '$lib/lang.js'
 
 	let properties = [{ type: 'component', attr: 'breadcrumbs', desc: 'Container element' }];
 </script>
 
 <div flex flex-col gap-10 py-48>
 	<div>
-		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Breadcrumb</h2>
+		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Breadcrumbs</h2>
 		<p p-3>{$t('breadcrumb.desc')}</p>
 	</div>
 

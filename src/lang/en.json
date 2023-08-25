@@ -28,7 +28,8 @@
   "dropdown": {
     "desc": "Dropdown can open a menu or any other element when the button is clicked."
   },
-  "coba":{
+  "coba": {
     "tanya": "tanya"
-  }
+  },
+  "breadcrumb coba": "Breadcrumb"
 }

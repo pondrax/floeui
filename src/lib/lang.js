@@ -23,12 +23,9 @@ function loaders(path = 'lang') {
   return languages
 }
 
-/** @type {import('sveltekit-i18n').Config} */
-const config = ({
+export const { t, locale, locales, loading, loadTranslations } = new i18n({
   loaders: loaders()
 });
-
-export const { t, locale, locales, loading, loadTranslations } = new i18n(config);
 
 let initLang = 'en'
 locale.subscribe((lang)=>{

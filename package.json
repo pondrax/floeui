@@ -1,92 +1,95 @@
 {
-	"name": "floeui",
-	"version": "0.0.27",
-	"description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
-	"keywords": [
-		"unocss",
-		"daisyui",
-		"tailwind",
-		"ui framework",
-		"svelte"
-	],
-	"homepage": "https://github.com/pondrax/floeui#readme",
-	"author": "Pondra <pondrax3@gmail.com> (https://floeui.vercel.app/)",
-	"license": "Apache-2.0",
-	"scripts": {
-		"dev": "vite dev",
-		"start": "node build",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"test": "vitest",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
-		},
-		"./utils": {
-			"types": "./dist/utils.d.ts",
-			"default": "./dist/utils.js"
-		},
-		"./lang": {
-			"types": "./dist/lang.d.ts",
-			"default": "./dist/lang.js"
-		},
-		"./directives": {
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
-		},
-		"./dist/directives/*": {
-			"types": "./dist/directives/*.d.ts",
-			"default": "./dist/directives/*.js"
-		},
-		"./floe.css": "./dist/floe.css",
-		"./ui/*.css": "./dist/ui/styles/*.css"
-	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"peerDependencies": {
-		"svelte": "^4.0.0"
-	},
-	"dependencies": {
-		"colord": "^2.9.3"
-	},
-	"devDependencies": {
-		"@iconify-json/bx": "^1.1.7",
-		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/adapter-node": "^1.3.1",
-		"@sveltejs/kit": "^1.23.0",
-		"@sveltejs/package": "^2.2.1",
-		"@unocss/extractor-svelte": "^0.55.2",
-		"dayjs": "^1.11.9",
-		"eslint": "^8.47.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-svelte": "^2.33.0",
-		"js-beautify": "^1.14.9",
-		"prettier": "^3.0.2",
-		"prettier-plugin-svelte": "^3.0.3",
-		"prism-svelte": "^0.5.0",
-		"prismjs": "^1.29.0",
-		"publint": "^0.2.2",
-		"svelte": "^4.2.0",
-		"svelte-check": "^3.5.0",
-		"sveltekit-i18n": "^2.4.2",
-		"tslib": "^2.6.2",
-		"typescript": "^5.1.6",
-		"unocss": "^0.55.2",
-		"vite": "^4.4.9",
-		"vitest": "^0.34.2"
-	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module"
+  "name": "floeui",
+  "version": "0.0.28",
+  "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
+  "keywords": [
+    "unocss",
+    "daisyui",
+    "tailwind",
+    "ui framework",
+    "svelte"
+  ],
+  "homepage": "https://github.com/pondrax/floeui#readme",
+  "author": "Pondra <pondrax3@gmail.com> (https://floeui.vercel.app/)",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
+    },
+    "./lang": {
+      "types": "./dist/lang.d.ts",
+      "default": "./dist/lang.js"
+    },
+    "./directives": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/directives.js"
+    },
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./dist/directives/*": {
+      "types": "./dist/directives/*.d.ts",
+      "default": "./dist/directives/*.js"
+    },
+    "./floe.css": "./dist/floe.css",
+    "./ui/*.css": "./dist/ui/styles/*.css"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "peerDependencies": {
+    "svelte": "^4.0.0"
+  },
+  "dependencies": {
+    "colord": "^2.9.3"
+  },
+  "devDependencies": {
+    "@iconify-json/bx": "^1.1.7",
+    "@sveltejs/adapter-auto": "^2.1.0",
+    "@sveltejs/adapter-node": "^1.3.1",
+    "@sveltejs/kit": "^1.23.0",
+    "@sveltejs/package": "^2.2.1",
+    "@unocss/extractor-svelte": "^0.55.2",
+    "dayjs": "^1.11.9",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-svelte": "^2.33.0",
+    "js-beautify": "^1.14.9",
+    "prettier": "^3.0.2",
+    "prettier-plugin-svelte": "^3.0.3",
+    "prism-svelte": "^0.5.0",
+    "prismjs": "^1.29.0",
+    "publint": "^0.2.2",
+    "svelte": "^4.2.0",
+    "svelte-check": "^3.5.0",
+    "sveltekit-i18n": "^2.4.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.1.6",
+    "unocss": "^0.55.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.2"
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "start": "node build",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "test": "vitest",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  }
 }
