@@ -1,0 +1,10 @@
+languageIds:
+  - javascript
+  - typescript
+  - svelte
+  - sveltekit
+
+usageMatchRegex:
+  - "[^\\w\\d].*?\\$t\\(['\"`]({key})['\"`]"
+
+monopoly: true

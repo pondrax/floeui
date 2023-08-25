@@ -1,6 +1,7 @@
 <script>
 	import { fnTheme } from '$lib/directives.js';
-	import { language } from '@inlang/sdk-js';
+	import { locale, locales } from '$lib/lang.js';
+
 	export let data;
 	let sidebarOpen = false;
 </script>
@@ -33,21 +34,26 @@
 		<ul menu overflow-auto bg-base>
 			{#each data.docs as { path, active }}
 				<li>
-					<a href={'/' + language + '/docs/' + path} class:bg-base-b={active} capitalize
+					<a href={'/' + $locale + '/docs/' + path} class:bg-base-b={active} capitalize
 						>{path.replaceAll('-', ' ')}</a
 					>
 				</li>
 			{/each}
 			<li></li>
 			<li>
-				<a href={'/' + language + '/components'}>All Components</a>
+				<a href={'/' + $locale + '/components'}>All Components</a>
 			</li>
 
 			{#each data.components as [heading, links]}
 				<li menu-heading capitalize>{heading}</li>
 				{#each links as { path, active, action }}
 					<li>
-						<a href={'/' + language + '/components/' + path} class:bg-active={active} class:text-neutral={active} hover-bg-active>
+						<a
+							href={'/' + $locale + '/components/' + path}
+							class:bg-active={active}
+							class:text-neutral={active}
+							hover-bg-active
+						>
 							<span capitalize>
 								{path.replaceAll('-', ' ')}
 							</span>
@@ -65,10 +71,20 @@
 	</aside>
 	<section drawer-content>
 		<div bg-baseA rounded-box p-5 h-full overflow-auto>
-			<div use:fnTheme={{ theme: 'cupcake', pos: 'start' }} flex gap-2 mb-10>
+			<div use:fnTheme={{ theme: 'cupcake', pos: 'start' }} flex gap-1 mb-10>
 				<button drawer-toggle btn="~ sm outline" on:click={() => (sidebarOpen = !sidebarOpen)}>
 					<i i-bx-menu />
 				</button>
+				<div dropdown>
+					<button btn="~ sm outline" uppercase>{$locale}</button>
+					<ul menu bg-base shadow rounded-xl>
+						{#each $locales as lang}
+							<li>
+								<button bg-transparent uppercase on:click={()=>$locale=lang}>{lang}</button>
+							</li>
+						{/each}
+					</ul>
+				</div>
 			</div>
 			<slot />
 		</div>

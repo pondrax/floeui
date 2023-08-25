@@ -1,3 +1,7 @@
+// export { dayjs as d } from 'dayjs'
+
+export * from './lang'
+
 export const browser = typeof window !== 'undefined';
 
 /**

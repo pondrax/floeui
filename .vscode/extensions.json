@@ -1,3 +1,7 @@
 {
-	"recommendations": ["inlang.vs-code-extension"]
+	"recommendations": [
+		"lokalise.i18n-ally",
+		"antfu.unocss",
+		"antfu.iconify"
+	]
 }

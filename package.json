@@ -34,6 +34,10 @@
 			"types": "./dist/utils.d.ts",
 			"default": "./dist/utils.js"
 		},
+		"./lang": {
+			"types": "./dist/lang.d.ts",
+			"default": "./dist/lang.js"
+		},
 		"./directives": {
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
@@ -58,29 +62,29 @@
 	},
 	"devDependencies": {
 		"@iconify-json/bx": "^1.1.7",
-		"@inlang/sdk-js": "^0.11.8",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-node": "^1.3.1",
-		"@sveltejs/kit": "^1.22.6",
+		"@sveltejs/kit": "^1.23.0",
 		"@sveltejs/package": "^2.2.1",
-		"@unocss/extractor-svelte": "^0.55.0",
+		"@unocss/extractor-svelte": "^0.55.2",
 		"dayjs": "^1.11.9",
 		"eslint": "^8.47.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-svelte": "^2.32.4",
+		"eslint-plugin-svelte": "^2.33.0",
 		"js-beautify": "^1.14.9",
-		"prettier": "^3.0.1",
+		"prettier": "^3.0.2",
 		"prettier-plugin-svelte": "^3.0.3",
 		"prism-svelte": "^0.5.0",
 		"prismjs": "^1.29.0",
-		"publint": "^0.2.0",
+		"publint": "^0.2.2",
 		"svelte": "^4.2.0",
 		"svelte-check": "^3.5.0",
-		"tslib": "^2.6.1",
+		"sveltekit-i18n": "^2.4.2",
+		"tslib": "^2.6.2",
 		"typescript": "^5.1.6",
-		"unocss": "^0.55.0",
+		"unocss": "^0.55.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.1"
+		"vitest": "^0.34.2"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",

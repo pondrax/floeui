@@ -4,7 +4,7 @@
 
 <script>
 	import { fnPrism, fnTab, fnCopy, fnRef } from '$lib/directives.js';
-	import { i } from '@inlang/sdk-js';
+	import { t } from '$lib/lang.js'
 
 	let properties = [
 		{ type: 'component', attr: 'btn', desc: 'Button' },
@@ -37,7 +37,7 @@
 <div flex flex-col gap-10 py-48>
 	<div>
 		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Button</h2>
-		<p p-3>{i('button.desc')}</p>
+		<p p-3>{$t('button.desc')}</p>
 	</div>
 
 	<div bg-base rounded-xl p-2 mx-3>
@@ -46,10 +46,10 @@
 				<thead>
 					<tr bg-base-b sticky top-0>
 						<th w-48>
-							<input input placeholder={i('search')} />
+							<input input placeholder={$t('search')} />
 						</th>
-						<th>{i('type')}</th>
-						<th>{i('desc')}</th>
+						<th>{$t('type')}</th>
+						<th>{$t('desc')}</th>
 					</tr>
 				</thead>
 				<tbody>

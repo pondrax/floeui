@@ -34,7 +34,7 @@
 	}));
 
 	$: days = daysBeforeMonth.concat(daysInMonth).concat(daysAfterMonth);
-  import { i } from '@inlang/sdk-js';
+  import { t } from '$lib/lang.js'
 	
 	let properties = [
 		{ type: 'component', attr: 'calendar', desc: 'Container element' },
@@ -50,7 +50,7 @@
 <div flex flex-col gap-10 py-48>
 	<div>
 		<h2 text-3xl cursor-pointer hover-text-primary font-bold pb-3># Calendar</h2>
-		<p p-3>{i('calendar.desc')}</p>
+		<p p-3>{$t('calendar.desc')}</p>
 	</div>
 
 	<div bg-base rounded-xl p-2 mx-3>
@@ -59,10 +59,10 @@
 				<thead>
 					<tr bg-base-b sticky top-0>
 						<th w-48>
-							<input input placeholder={i('search')} />
+							<input input placeholder={$t('search')} />
 						</th>
-						<th>{i('type')}</th>
-						<th>{i('desc')}</th>
+						<th>{$t('type')}</th>
+						<th>{$t('desc')}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -85,7 +85,7 @@
 		<h3 font-semibold cursor-pointer hover-text-primary>## Calendar</h3>
 		<div use:fnTab use:fnCopy={'[data-code]'}>
 			<div data-title="Preview" demo-preview>
-				<div calendar>
+				<div calendar calendar-xl>
 					<div calendar-title>
 						<div col-span-5 text-left px-2>
 							{currentDate.format('YYYY-MM-DD')}
@@ -260,7 +260,7 @@
 	<div>
 		<h3 font-semibold cursor-pointer hover-text-primary>
 			## Calendar 
-			<span badge="~ success">{i("fn.usage")}</span>
+			<span badge="~ success">{$t("fn.usage")}</span>
 		</h3>
 		<div use:fnTab use:fnCopy={'[data-code]'}>
 			<div data-title="Preview" demo-preview>

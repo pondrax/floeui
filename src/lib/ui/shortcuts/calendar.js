@@ -1,3 +1,6 @@
+// @unocss-include
+import { sizeSchemes } from "./base.js";
+
 const calendar = [
 	[
 		'calendar',
@@ -13,6 +16,15 @@ const calendar = [
 			'all-[:where(.disabled,[disabled])]-!text-base-content:20'
 		].join(' '),
 		{ layer: 'components calendar' }
+	],
+	[
+		/^calendar-(.+)$/,
+		([, c]) => {
+			if (sizeSchemes.includes(c)) {
+				console.log(c)
+				return `children-children-pad-${c}`;
+			}			
+		}
 	],
 	[
 		'calendar-title',
