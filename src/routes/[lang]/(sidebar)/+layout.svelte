@@ -10,7 +10,7 @@
 	<title>{data.pageTitle} - FloeUI</title>
 </svelte:head>
 
-<div drawer bg-base h-screen>
+<div drawer bg-base text-base-content h-screen>
 	<aside bg-base drawer-side lg-drawer-open class:drawer-open={sidebarOpen}>
 		<div px-6 py-2>
 			<div flex items-end gap-2 mb-2>
