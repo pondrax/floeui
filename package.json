@@ -1,6 +1,6 @@
 {
   "name": "floeui",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
   "keywords": [
     "unocss",
@@ -48,6 +48,10 @@
   "peerDependencies": {
     "svelte": "^4.0.0"
   },
+  "dependencies": {
+    "culori": "^4.0.1",
+    "picocolors": "^1.0.0"
+  },
   "devDependencies": {
     "@iconify-json/bx": "^1.1.10",
     "@sveltejs/adapter-auto": "^3.1.1",
@@ -56,13 +60,11 @@
     "@sveltejs/package": "^2.2.7",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@unocss/extractor-svelte": "^0.58.5",
-    "culori": "^4.0.1",
     "dayjs": "^1.11.10",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.35.1",
     "js-beautify": "^1.15.1",
-    "picocolors": "^1.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.2",
     "prism-svelte": "^0.5.0",
