@@ -1,4 +1,4 @@
-import colorFunctions from "./theming/function.js"
+import fn from "./theming/function.js"
 import themeDefaults from "./theming/themeDefaults.js"
 import themes from "./theming/themes.js"
 
@@ -6,9 +6,10 @@ const generated = (config) => {
   if (!config) {
     config = themeDefaults.themeOrder
   }
-
   const root = config.at(0)
-  const dark = config.find((key) => themes[`[data-theme=${key}]`]['color-scheme'] == 'dark')
+  // const dark = ''
+  const dark = config.find((key) => themes[key]['color-scheme'] == 'dark')
+  // console.log(root)
   return [
     `:root {`,
     getCSS(root),
@@ -31,8 +32,14 @@ const generated = (config) => {
 }
 
 function getCSS(selector) {
-  return Object.entries(colorFunctions.convertColorFormat(themes[`[data-theme=${selector}]`]))
+  // console.log(fn.convertColorFormat(themes[selector]))
+  return Object.entries(fn.convertColorFormat(themes[selector]))
     .map(([prop, val]) => `  ${prop}: ${val};`)
     .join('\n')
+}
+const generateX = (config) => {
+  // console.log(fn.injectThemes(()=>{},()=>{},themes))
+  return fn.injectThemes(()=>{},()=>{},themes)
+  // return ``
 }
 export default generated

@@ -1,6 +1,6 @@
 {
   "name": "floeui",
-  "version": "0.0.28",
+  "version": "0.0.30",
   "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
   "keywords": [
     "unocss",
@@ -10,7 +10,7 @@
     "svelte"
   ],
   "homepage": "https://github.com/pondrax/floeui#readme",
-  "author": "Pondra <pondrax3@gmail.com> (https://floeui.vercel.app/)",
+  "author": "Pondra <pondrax3@gmail.com> (https://dra.my.id/)",
   "license": "Apache-2.0",
   "exports": {
     ".": {
@@ -48,34 +48,34 @@
   "peerDependencies": {
     "svelte": "^4.0.0"
   },
-  "dependencies": {
-    "colord": "^2.9.3"
-  },
   "devDependencies": {
-    "@iconify-json/bx": "^1.1.7",
-    "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/adapter-node": "^1.3.1",
-    "@sveltejs/kit": "^1.23.0",
-    "@sveltejs/package": "^2.2.1",
-    "@unocss/extractor-svelte": "^0.55.2",
-    "dayjs": "^1.11.9",
-    "eslint": "^8.47.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-svelte": "^2.33.0",
-    "js-beautify": "^1.14.9",
-    "prettier": "^3.0.2",
-    "prettier-plugin-svelte": "^3.0.3",
+    "@iconify-json/bx": "^1.1.10",
+    "@sveltejs/adapter-auto": "^3.1.1",
+    "@sveltejs/adapter-node": "^4.0.1",
+    "@sveltejs/kit": "^2.5.2",
+    "@sveltejs/package": "^2.2.7",
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@unocss/extractor-svelte": "^0.58.5",
+    "culori": "^4.0.1",
+    "dayjs": "^1.11.10",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.35.1",
+    "js-beautify": "^1.15.1",
+    "picocolors": "^1.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-svelte": "^3.2.2",
     "prism-svelte": "^0.5.0",
     "prismjs": "^1.29.0",
-    "publint": "^0.2.2",
-    "svelte": "^4.2.0",
-    "svelte-check": "^3.5.0",
+    "publint": "^0.2.7",
+    "svelte": "^4.2.12",
+    "svelte-check": "^3.6.6",
     "sveltekit-i18n": "^2.4.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.1.6",
-    "unocss": "^0.55.2",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.2"
+    "typescript": "^5.4.2",
+    "unocss": "^0.58.5",
+    "vite": "^5.1.5",
+    "vitest": "^1.3.1"
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
