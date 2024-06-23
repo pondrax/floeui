@@ -1,6 +1,17 @@
 {
-  "name": "floe",
-  "version": "0.0.1",
+  "name": "floeui",
+  "version": "0.1.1",
+  "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
+  "keywords": [
+    "unocss",
+    "daisyui",
+    "tailwind",
+    "ui framework",
+    "svelte"
+  ],
+  "homepage": "https://github.com/pondrax/floeui#readme",
+  "author": "Pondra <pondrax3@gmail.com> (https://dra.my.id/)",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -29,7 +40,6 @@
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "daisyui": "^4.12.2",
     "publint": "^0.1.9",
     "svelte": "^5.0.0-next.1",
     "svelte-check": "^3.6.0",
@@ -42,9 +52,7 @@
   "type": "module",
   "dependencies": {
     "@unocss/extractor-svelte": "^0.60.4",
-    "@vsilk/unocss-preset-daisyui": "^0.0.4",
-    "camelcase": "^8.0.0",
-    "parsel-js": "^1.1.2",
+    "daisyui": "^4.12.2",
     "postcss": "^8.4.38",
     "postcss-js": "^4.0.1",
     "postcss-selector-parser": "^6.1.0",
