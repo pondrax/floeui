@@ -8,6 +8,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+  namespace svelteHTML {
+		import type { AttributifyAttributes } from '@unocss/preset-attributify'
+		type HTMLAttributes = AttributifyAttributes;
+	}
 }
 
 export {};

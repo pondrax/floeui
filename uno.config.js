@@ -5,7 +5,7 @@ import {
   presetUno
 } from 'unocss'
 
-import presetFloeui from './src/lib/floeui.js'
+import presetFloeui from './src/lib/index.js'
 import extractorSvelte from '@unocss/extractor-svelte';
 
 export default defineConfig({
