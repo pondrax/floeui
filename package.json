@@ -1,6 +1,6 @@
 {
   "name": "floeui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
   "keywords": [
     "unocss",
@@ -21,6 +21,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
   },
+  "main": "./dist/index.js", 
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -40,6 +41,7 @@
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@unocss/extractor-svelte": "^0.60.4",
     "publint": "^0.1.9",
     "svelte": "^5.0.0-next.1",
     "svelte-check": "^3.6.0",
@@ -51,7 +53,6 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@unocss/extractor-svelte": "^0.60.4",
     "daisyui": "^4.12.2",
     "postcss": "^8.4.38",
     "postcss-js": "^4.0.1",
