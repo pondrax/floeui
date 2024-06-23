@@ -1,6 +1,6 @@
 {
   "name": "floeui",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An adaptation of the [DaisyUI] plugin for [UnoCSS]",
   "keywords": [
     "unocss",
@@ -25,6 +25,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
       "svelte": "./dist/index.js"
     }
   },
