@@ -1,22 +1,39 @@
 import postcss from 'postcss';
-import { parse as cssInJsParser } from 'postcss-js';
+import parser from 'postcss-js';
 import _selectorParser from 'postcss-selector-parser';
-import { entriesToCss, isPlainObject, mergeDeep, randomString, toArray, toEscapedSelector } from './utils.js';
+import * as utils from '@unocss/core'
 import conflicts from './conflicts.js';
 
-// export * from './type';
 
-function parseStyles(styles, postcssPlugins = []) {
-  return toArray(styles).flatMap(style =>
-    isPlainObject(style) && !['root', 'document'].includes(style.type)
-      ? postcss(toArray(postcssPlugins)).process(style, { parser: cssInJsParser }).root.nodes
-      : postcss(toArray(postcssPlugins)).process(style).root.nodes,
-  );
+function entriesToCss(arr) {
+  if (!arr)
+    return '';
+  if (utils.isString(arr))
+    return arr;
+  return arr
+    .filter(([k, v], idx) => {
+      for (let i = idx - 1; i >= 0; i--) {
+        if (arr[i]?.[0] === k && arr[i]?.[1] === v)
+          return false;
+      }
+      return true;
+    })
+    .map(([key, value]) => value != null ? `${key}:${value};` : undefined)
+    .filter(Boolean)
+    .join('');
 }
 
+function parseStyles(styles, postcssPlugins = []) {
+  return utils.toArray(styles).flatMap(style =>
+    utils.isObject(style) && !['root', 'document'].includes(style.type)
+      ? postcss(utils.toArray(postcssPlugins)).process(style, { parser }).root.nodes
+      : postcss(utils.toArray(postcssPlugins)).process(style).root.nodes,
+  );
+}
 function formatSelector(selector) {
   return selector.trim().replaceAll('_', '\\_').replaceAll('\"', '\'').split(/\s/).filter(Boolean).join('_');
 }
+
 
 const selectorParser = _selectorParser((selector) => {
   selector.walk((node) => {
@@ -64,30 +81,33 @@ function parseRule(rule) {
   }
 }
 
-function genComponentPreset(option) {
+const presetComponent = (option = {}) => {
   const {
     style,
     layer = 'default',
-    postcssPlugins,
+    plugins = []
   } = option;
+
   const rules = [];
   const shortcuts = new Map();
   const preflights = [];
-  parseStyles(style, postcssPlugins ?? [])
+
+  parseStyles(style, [].concat(plugins))
     .flatMap(parseRule)
     .forEach(([candidates, selector, cssbody, parents]) => {
       if (!candidates.length) {
+        const csstext = (parents.length ? `${parents.reverse().map(([name, params]) => `@${name}  ${(params)} `).join('{')}{` : '')
+          + (selector ? `${selector}{` : '')
+          + entriesToCss(cssbody)
+          + (selector ? '}' : '')
+          + '}'.repeat(parents.length)
+
         preflights.push({
-          getCSS: () =>
-            (parents.length ? `${parents.reverse().map(([name, params]) => `@${name} ${(params)}`).join('{')}{` : '')
-            + (selector ? `${selector}{` : '')
-            + entriesToCss(cssbody)
-            + (selector ? '}' : '')
-            + '}'.repeat(parents.length),
+          getCSS: () => csstext,
           layer,
         });
       }
-      const ruleName = randomString();
+      const ruleName = Math.random().toString(16).slice(2);
       rules.push([
         ruleName,
         cssbody,
@@ -97,36 +117,17 @@ function genComponentPreset(option) {
           noMerge: selector.includes('::-'),
         },
       ]);
+
       candidates.forEach((candidate) => {
         const shortcutProps = shortcuts.get(candidate) ?? [];
         shortcutProps.push(`${parents.length ? `${parents.reverse().map(([name, params]) => `[@${name}${formatSelector(params)}]`).join(':')}:` : ''}selector-[${formatSelector(selector)}]:${ruleName}`);
         shortcuts.set(candidate, shortcutProps);
       });
-    });
+    })
+
   return {
+    preflights,
     rules,
-    // shortcuts: [...shortcuts]
-    //   .map(([shortcutName, shortcutProps]) => [
-    //     new RegExp(`^${shortcutName}$`),
-    //     (_, { rawSelector, currentSelector }) => {
-    //       if (rawSelector === currentSelector) {
-    //         return shortcutProps;
-    //       } else {
-    //         const classRegex = new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g');
-    //         const attributeRegex = new RegExp(`(\\[${shortcutName.replaceAll('_', String.raw`\\_`)}\\])`, 'g');
-
-    //         return shortcutProps.map(prop => {
-    //           // Replace class selectors
-    //           let updatedProp = prop.replaceAll(classRegex, toEscapedSelector(formatSelector(rawSelector)));
-    //           // Replace attribute selectors
-    //           updatedProp = updatedProp.replaceAll(attributeRegex, toEscapedSelector(formatSelector(rawSelector)));
-    //           return updatedProp;
-    //         });
-    //       }
-    //     },
-    //     { layer },
-    //   ]),
-
     shortcuts: [...shortcuts]
       .map(([shortcutName, shortcutProps]) => [
         new RegExp(`^${shortcutName}$`),
@@ -135,49 +136,17 @@ function genComponentPreset(option) {
             return shortcutProps;
           else {
             return shortcutProps.map(prop => {
-              console.log(prop)
-              const res = prop.replaceAll(new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g'), (formatSelector(rawSelector)))
-              return res;
+              const shortcutNameRe = new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g')
+              const result = prop
+                .replaceAll(shortcutNameRe, (formatSelector(rawSelector)))
+                .replace(/\[(\w+)=''\]-(\w+)/g, "[$1-$2='']")
+              return result;
             });
           }
         },
         { layer },
       ]),
-    // shortcuts: [...shortcuts]
-    //   .map(([shortcutName, shortcutProps]) => [
-    //     new RegExp(`^${shortcutName}$`),
-    //     (_, { rawSelector, currentSelector }) => {
-    //       console.log(`rawSelector: ${rawSelector}, currentSelector: ${currentSelector}`);
-
-    //       if (rawSelector === currentSelector) {
-    //         console.log(`Returning shortcutProps for ${rawSelector}`);
-    //         return shortcutProps;
-    //       } else {
-    //         const classRegex = new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g');
-    //         const attributeRegex = new RegExp(`(\\[${shortcutName.replaceAll('_', String.raw`\\_`)}\\])`, 'g');
-
-    //         return shortcutProps.map(prop => {
-    //           // Replace class selectors
-    //           // let updatedProp = prop.replaceAll(classRegex, toEscapedSelector(formatSelector(rawSelector)));
-    //           // Replace attribute selectors
-    //           let updatedProp = prop.replaceAll(new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g'), toEscapedSelector(formatSelector(rawSelector)))
-    //           console.log(prop)
-    //           console.log(`Updated prop: ${updatedProp}`);
-    //           return updatedProp;
-    //         });
-    //       }
-    //     },
-    //     { layer },
-    //   ]),
-
-    preflights,
-  };
+  }
 }
 
-export default function presetComponent(options) {
-  return {
-    name: 'unocss-preset-component',
-    ...toArray(options).map(genComponentPreset)
-      .reduce((prev, curr) => (mergeDeep(prev, curr, true)), {}),
-  };
-}
+export { presetComponent as default }

@@ -1,4 +1,4 @@
-DOCS
+<!-- DOCS
 
 
 <div class="collapse bg-base-200">
@@ -38,4 +38,4 @@ DOCS
 </div>
 
 
-<span class="badge">Badge</span>
+<span class="badge">Badge</span> -->

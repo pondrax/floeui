@@ -42,12 +42,12 @@
   "type": "module",
   "dependencies": {
     "@unocss/extractor-svelte": "^0.60.4",
-    "autoprefixer": "^10.4.19",
-    "css-to-tailwindcss": "^1.0.5",
+    "@vsilk/unocss-preset-daisyui": "^0.0.4",
+    "camelcase": "^8.0.0",
+    "parsel-js": "^1.1.2",
+    "postcss": "^8.4.38",
     "postcss-js": "^4.0.1",
-    "postcss-nested": "^6.0.1",
     "postcss-selector-parser": "^6.1.0",
-    "unocss": "^0.60.4",
-    "unocss-preset-component": "^0.0.4"
+    "unocss": "^0.60.4"
   }
 }

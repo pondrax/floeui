@@ -4,7 +4,8 @@ import {
   presetIcons,
   presetUno
 } from 'unocss'
-import presetDaisy from './src/lib/daisy'
+
+import presetFloeui from './src/lib/floeui.js'
 import extractorSvelte from '@unocss/extractor-svelte';
 
 export default defineConfig({
@@ -13,8 +14,14 @@ export default defineConfig({
   ],
   presets: [
     presetUno(),
+    presetFloeui({
+      themes: [
+        "light", 
+        "dark", 
+        "cupcake"
+      ],
+    }),
     presetAttributify(),
-    presetDaisy(),
     presetIcons({
       scale: 1.5
     }),
