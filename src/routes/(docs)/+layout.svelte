@@ -4,7 +4,7 @@
   
   let {children} = $props()
   const activePage = $derived($page.route.id + "/");
-  $inspect(activePage)
+  // $inspect(activePage)
 </script>
 
 <div class="drawer drawer-open bg-base-200">
