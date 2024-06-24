@@ -1,11 +1,14 @@
 import daisy from 'daisyui';
 import unoify from './unoify';
+import { rainbow, theme } from './floe/base.js';
 // import pkg from './package.json';
+
 
 function presetFloeui(option) {
   option = option ?? {};
-  option.logs = false
-  const styles = [];
+  option.logs = false;
+  const styles = []
+
   daisy.handler({
     addBase: (style) => {
       styles.push(style);
@@ -19,24 +22,27 @@ function presetFloeui(option) {
       }, defaultValue);
     }
   });
+  styles.push(rainbow());
+  
+  console.log(`\n💅 FloeUI \n`)
 
-  console.log(`💅 FloeUI `)
-  console.log()
-
-  return unoify({
-    name: 'floeui',
-    layer: 'floeui',
-    style: styles,
-    postcssPlugins: [
-      {
-        postcssPlugin: "replace-variable-prefix",
-        Declaration: (decl) => {
-          decl.prop = decl.prop.replaceAll(/(var\s*\(\s*)?--(?:tw-)+([-\w]+)?/g, "$1--un-$2");
-          decl.value = decl.value.replaceAll(/(var\s*\(\s*)?--(?:tw-)+([-\w]+)?/g, "$1--un-$2");
+  return {
+    ...unoify({
+      name: 'floeui',
+      layer: 'floeui',
+      style: styles,
+      plugins: [
+        {
+          postcssPlugin: 'replace-variable-prefix',
+          Declaration: (decl) => {
+            decl.prop = decl.prop.replaceAll(/(var\s*\(\s*)?--(?:tw-)+([-\w]+)?/g, '$1--un-$2')
+            decl.value = decl.value.replaceAll(/(var\s*\(\s*)?--(?:tw-)+([-\w]+)?/g, '$1--un-$2')
+          },
         }
-      }
-    ]
-  })
+      ],
+    }),
+    theme
+  }
 }
 
 export { presetFloeui as default };

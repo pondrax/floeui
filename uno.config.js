@@ -20,10 +20,12 @@ export default defineConfig({
         "dark", 
         "cupcake"
       ],
+      darkMode: ['class', '[data-theme="dark"]']
     }),
     presetAttributify(),
     presetIcons({
-      scale: 1.5
+      scale: 1.2,
+      cdn: 'https://esm.sh/',
     }),
   ],
 })

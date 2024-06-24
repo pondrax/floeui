@@ -1,14 +1,13 @@
+import { toArray, isString, isObject, toEscapedSelector } from 'unocss';
 import postcss from 'postcss';
 import parser from 'postcss-js';
 import _selectorParser from 'postcss-selector-parser';
-import * as utils from '@unocss/core'
 import conflicts from './conflicts.js';
-
 
 function entriesToCss(arr) {
   if (!arr)
     return '';
-  if (utils.isString(arr))
+  if (isString(arr))
     return arr;
   return arr
     .filter(([k, v], idx) => {
@@ -24,16 +23,15 @@ function entriesToCss(arr) {
 }
 
 function parseStyles(styles, postcssPlugins = []) {
-  return utils.toArray(styles).flatMap(style =>
-    utils.isObject(style) && !['root', 'document'].includes(style.type)
-      ? postcss(utils.toArray(postcssPlugins)).process(style, { parser }).root.nodes
-      : postcss(utils.toArray(postcssPlugins)).process(style).root.nodes,
+  return toArray(styles).flatMap(style =>
+    isObject(style) && !['root', 'document'].includes(style.type)
+      ? postcss(toArray(postcssPlugins)).process(style, { parser }).root.nodes
+      : postcss(toArray(postcssPlugins)).process(style).root.nodes,
   );
 }
 function formatSelector(selector) {
   return selector.trim().replaceAll('_', '\\_').replaceAll('\"', '\'').split(/\s/).filter(Boolean).join('_');
 }
-
 
 const selectorParser = _selectorParser((selector) => {
   selector.walk((node) => {
@@ -91,7 +89,7 @@ const presetComponent = (option = {}) => {
   const rules = [];
   const shortcuts = new Map();
   const preflights = [];
-
+  
   parseStyles(style, [].concat(plugins))
     .flatMap(parseRule)
     .forEach(([candidates, selector, cssbody, parents]) => {
@@ -124,26 +122,70 @@ const presetComponent = (option = {}) => {
         shortcuts.set(candidate, shortcutProps);
       });
     })
+    const theme = {
+      colors: {
+        primary: 'oklch(var(--p))',
+        primaryContent: 'oklch(var(--pc))',
+        secondary: 'oklch(var(--s))',
+        secondaryContent: 'oklch(var(--sc))',
+        accent: 'oklch(var(--a))',
+        accentContent: 'oklch(var(--ac))',
+        neutral: 'oklch(var(--n))',
+        neutralContent: 'oklch(var(--nc))',
+        base: 'oklch(var(--b1))',
+        baseA: 'oklch(var(--b2))',
+        baseB: 'oklch(var(--b3))',
+        opA: 'oklch(var(--bc),.1)',
+        opB: 'oklch(var(--bc),.3)',
+        opC: 'oklch(var(--bc),.7)',
+        baseContent: 'oklch(var(--bc))',
+        info: 'oklch(var(--in))',
+        infoContent: 'oklch(var(--inc))',
+        success: 'oklch(var(--su))',
+        successContent: 'oklch(var(--suc))',
+        warning: 'oklch(var(--wa))',
+        warningContent: 'oklch(var(--wac))',
+        error: 'oklch(var(--er))',
+        errorContent: 'oklch(var(--erc))',
+        active: 'var(--r)',
+        rainbow: 'var(--r)'
+      }
 
+    }
   return {
     preflights,
     rules,
     shortcuts: [...shortcuts]
       .map(([shortcutName, shortcutProps]) => [
         new RegExp(`^${shortcutName}$`),
-        (_, { rawSelector, currentSelector }) => {
-          if (rawSelector === currentSelector)
+        (_, { rawSelector, currentSelector, variants }) => {
+          if (rawSelector === currentSelector) {
             return shortcutProps;
-          else {
+          } else {
             return shortcutProps.map(prop => {
-              const shortcutNameRe = new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g')
-              const result = prop
-                .replaceAll(shortcutNameRe, (formatSelector(rawSelector)))
-                .replace(/\[(\w+)=''\]-(\w+)/g, "[$1-$2='']")
-              return result;
-            });
+              prop = prop.replaceAll(currentSelector, rawSelector)
+                .replace(/-\[\.\[(.*?)\]\]/g, '-[[$1]]') // Fix attributify 
+              if (shortcutName.includes('alert')) {
+                console.log((prop), rawSelector, currentSelector, shortcutName)
+              }
+              return prop
+            })
           }
         },
+        // (_, { rawSelector, currentSelector }) => {
+        //   if (rawSelector === currentSelector)
+        //     return shortcutProps;
+        //   else {
+        //     return shortcutProps.map(prop => {
+        //       return prop
+        //       const shortcutNameRe = new RegExp(`(\\.${shortcutName.replaceAll('_', String.raw`\\_`)})(?![-\\w])?`, 'g')
+        //       const result = prop
+        //         .replaceAll(shortcutNameRe, utils.escapeSelector(formatSelector(rawSelector)))
+        //         // .replace(/\[(\w+)=''\]-(\w+)/g, "[$1-$2='']")
+        //       return result;
+        //     });
+        //   }
+        // },
         { layer },
       ]),
   }
