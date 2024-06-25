@@ -1,13 +1,20 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import path from 'node:path'
 import unocss from 'unocss/vite'
 
+// console.log(path.resolve("/src/(docs)/lib"))
 export default defineConfig({
   plugins: [
     unocss(),
     sveltekit(),
     CustomHmr()
-  ]
+  ],
+  resolve: {
+    alias: {
+      $components: path.resolve("/src/routes/(docs)/lib"),
+    },
+  },
 });
 
 

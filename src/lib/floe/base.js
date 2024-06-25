@@ -32,21 +32,24 @@ export const theme = {
   }
 }
 
-export const rainbow = (length = 50) => {
+export const rainbow = (length = 20) => {
   return {
     ':root,[data-theme]': {
       background: '#333'
     },
     ':root': {
-      '--r': '60% 0.13 0', // Initial color
-      animation: 'rainbow 15s infinite alternate'
+      // '--r': '60% 0.13 300', // OKLCH Initial color
+      // '--r': '200 78% 51%', // HSL Initial color
+      animation: 'rainbow 5s infinite alternate'
     },
     '@keyframes rainbow': Object.fromEntries(
       Array.from({ length }, (_, i) => [
-        `${Math.round(i * 100 / length)}%`,
-        { '--r': `60% 0.13 ${Math.ceil(i * 360 / length)}` }
+        `${Math.round(i * 100 / length)}%${i == 0 ? ',100%' : ''}`,
+        { '--r': `60% 0.13 ${Math.ceil(i * 300 / length)}` }
+        // { '--r': `${Math.round(i * 360 / length)} 78% 51%` }
       ])
     )
   };
 };
+
 

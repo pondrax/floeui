@@ -9,7 +9,7 @@
 
 <div class="drawer drawer-open bg-base-200">
   <input id="sidebar" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col bg-base-100 rounded-box m-1 p-5">
+  <div class="drawer-content flex flex-col bg-base-100 rounded-box m-1 p-5 w-full min-w-0">
     <!-- Page content here -->
     <div>
       <label for="sidebar" class="btn lg-hidden">
@@ -24,11 +24,19 @@
     <label for="sidebar" aria-label="close sidebar" class="drawer-overlay"
     ></label>
     <div>
-      <a href="/">
+      <a href="/" class="flex gap-5 p-5 items-center">
         <img src="/favicon.png" alt="Icon" class="h-20" />
+        <div>
+          <div class="text-4xl">
+            <span class="text-#F8A696">Floe</span><span class="text-rainbow">UI</span>
+          </div>
+          <div class="text-xs">
+            UnoCSS & DaisyUI
+          </div>
+        </div>
       </a>
     </div>
-    <ul class="menu w-64 rounded-box">
+    <ul class="menu w-70 rounded-box">
       {#each pages as page}
         <li>
           {#if page.collapsible}
