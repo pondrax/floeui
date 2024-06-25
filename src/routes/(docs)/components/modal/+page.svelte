@@ -5,6 +5,11 @@
   const title = "Modal";
 </script>
 
+<div class="opacity-80 hover-opacity-100 font-bold text-lg">
+  <span class="opacity-50">#</span>
+  {title}
+</div>
+
 <Table
   data={[
     { type: "component", class: "modal", desc: "Container element" },
@@ -64,7 +69,7 @@
 <Preview
   title="Dialog modal, closes when clicked outside"
   desc="there is a second form with 'modal-backdrop' class and it covers the screen so we can close the modal when clicked outside"
-  code={`<button class="btn" onclick={() => my_modal_2.showModal()}>open modal</button>
+  code={`<button class="btn" onclick="my_modal_2.showModal()">open modal</button>
 <dialog id="my_modal_2" class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg">Hello!</h3>

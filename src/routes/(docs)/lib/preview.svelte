@@ -3,7 +3,7 @@
   import "prismjs/themes/prism-okaidia.min.css";
   import "prism-svelte";
 
-  let { children, background, code, title } = $props();
+  let { children, background, code, title, lang } = $props();
 
   /** @type {HTMLDivElement} */
   let tabs;
@@ -44,7 +44,7 @@
     role="tabpanel"
     class={"tab-content preview bg-base-100 !border-base-300 rounded-box p-6 "+ background}
   >
-    <div class="flex flex-wrap gap-2 items-center justify-center">
+    <div class="flex flex-wrap gap-2 items-center justify-center relative">
       {@html code}
     </div>
   </div>
@@ -88,13 +88,23 @@
     {/if}
   </div>
 
-  <!-- Preview Component -->
-  <div role="tablist" class="tabs tabs-lifted mb-5" bind:this={tabs}>
-    {@render preview('Preview', code)}
-    {@render source('HTML', code)}
-    {@render source('JSX', code.replaceAll("class", "className"))}
-    {@render source('Attributify', code.replace(/class="([^"]*)"/g, "$1"))}
-  </div>
+  {#if lang== undefined}
+    <!-- Preview Component -->
+    <div role="tablist" class="tabs tabs-lifted mb-5" bind:this={tabs}>
+
+      {@render preview('Preview', code)}
+      {@render source('HTML', code)}
+      {@render source('JSX', code.replaceAll("class", "className"))}
+      {@render source('Attributify', code.replace(/class="([^"]*)"/g, "$1"))}
+    </div>
+  {:else}
+    <div class="overflow-auto bg-neutral text-neutral-content !border-base-300 rounded-box">
+      <pre class="text-sm">{@html Prism.highlight(
+        code,
+        Prism.languages.js,
+      )}</pre>
+    </div>
+  {/if}
 </div>
 
 <style>

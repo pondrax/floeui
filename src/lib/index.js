@@ -29,7 +29,7 @@ function presetFloeui(option) {
   return {
     ...unoify({
       name: 'floeui',
-      layer: 'floeui',
+      layer: '--floeui--',
       style: styles,
       plugins: [
         {

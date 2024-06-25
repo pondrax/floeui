@@ -2,7 +2,7 @@
   let { data } = $props();
 </script>
 
-<div class="overflow-x-auto my-10">
+<div class="overflow-x-auto my-5">
   <table class="table table-xs">
     <thead>
       <tr>
@@ -16,13 +16,17 @@
         <tr>
           <td>{row.class}</td>
           <td>
-            <span
-              class="badge badge-sm"
-              class:badge-ghost={row.type == "component"}
-              class:badge-info={row.type == "responsive"}
-            >
-              {row.type}
-            </span>
+            {#if row.type == "component"}
+              <div class="tooltip cursor-help" data-tip="Changes the style of component">
+                <div class="badge badge-sm badge-ghost">{row.type}</div>
+              </div>
+            {:else if row.type == "responsive"}
+              <div class="tooltip cursor-help" data-tip="Support responsive prefixes (sm,lg, ...)">
+                <div class="badge badge-sm badge-success">{row.type}</div>
+              </div>
+            {:else}
+              <div class="badge badge-sm">{row.type}</div>
+            {/if}
           </td>
           <td>{row.desc}</td>
         </tr>
