@@ -1,3 +1,5 @@
+export { reset } from './reset.js'
+
 /** @typedef {import('unocss').ThemeExtender } */
 export const theme = {
   colors: {
@@ -40,7 +42,7 @@ export const rainbow = (length = 20) => {
     ':root': {
       // '--r': '60% 0.13 300', // OKLCH Initial color
       // '--r': '200 78% 51%', // HSL Initial color
-      animation: 'rainbow 5s infinite alternate'
+      animation: 'rainbow 15s infinite alternate'
     },
     '@keyframes rainbow': Object.fromEntries(
       Array.from({ length }, (_, i) => [

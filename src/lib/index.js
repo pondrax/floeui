@@ -1,14 +1,14 @@
 import daisy from 'daisyui';
 import unoify from './unoify';
-import { rainbow, theme } from './floe/base.js';
+import { rainbow, theme, reset } from './floe/base.js';
 // import pkg from './package.json';
 
 
 function presetFloeui(option) {
   option = option ?? {};
   option.logs = false;
-  const styles = []
-
+  const styles = [reset]
+  // console.log(reset)
   daisy.handler({
     addBase: (style) => {
       styles.push(style);

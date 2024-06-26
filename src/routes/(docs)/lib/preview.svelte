@@ -6,7 +6,7 @@
   let { children, background, code, title, lang } = $props();
 
   /** @type {HTMLDivElement} */
-  let tabs;
+  let tabs = $state();
 
   /** @type {string} */
   let copyText = $state('copy');
