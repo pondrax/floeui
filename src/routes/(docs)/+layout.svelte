@@ -4,7 +4,7 @@
   
   let {children} = $props()
   const activePage = $derived($page.route.id + "/");
-  // $inspect(activePage)
+  // $inspect(CONFIG)
 </script>
 
 <div class="drawer lg-drawer-open bg-base-200">
@@ -23,18 +23,31 @@
     <label for="sidebar" aria-label="close sidebar" class="drawer-overlay"
     ></label>
     <div class="bg-base-200">
-      <a href="/" class="flex gap-5 p-5 items-center">
-        <img src="/favicon.png" alt="Icon" class="h-20" />
-        <div>
+      <div class="flex gap-5 p-5 items-center">
+        <a href="/">
+          <img src="/favicon.png" alt="Icon" class="h-20" />
+        </a>
+        <div class="relative">
           <div class="text-4xl">
             <span class="text-#F8A696">Floe</span><span class="text-rainbow">UI</span>
+            <span class="badge bg-rainbow badge absolute top--1 right--5">{CONFIG.version}</span>
           </div>
-          <div class="text-xs">
-            UnoCSS & DaisyUI
+          <div class="flex text-xs text-center">
+            <a href="https://unocss.dev" target="_blank" rel="nofollow">
+              <span>UnoCSS</span>
+              <br/>
+              <span class="badge badge-xs badge-primary">{CONFIG.devDependencies?.unocss}</span>
+            </a>
+            &
+            <a href="https://daisyui.com" target="_blank" rel="nofollow">
+              <span>DaisyUI</span>
+              <br/>
+              <span class="badge badge-xs badge-secondary">{CONFIG.dependencies?.daisyui}</span>
+            </a>
           </div>
         </div>
-      </a>
-      <ul class="menu w-70 rounded-box">
+      </div>
+      <ul class="menu w-72 rounded-box">
         {#each pages as page}
           <li>
             {#if page.collapsible}

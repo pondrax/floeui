@@ -1,7 +1,7 @@
 {
   "name": "floeui",
-  "version": "0.1.7",
-  "description": "Extended DaisyUI plugin for [UnoCSS]",
+  "version": "0.1.8",
+  "description": "Extended DaisyUI plugin for UnoCSS",
   "keywords": [
     "unocss",
     "daisyui",

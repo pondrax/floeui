@@ -2,6 +2,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import path from 'node:path'
 import unocss from 'unocss/vite'
+import { readFileSync } from 'fs';
+
+const CONFIG = JSON.parse(readFileSync('./package.json', 'utf8'));
 
 // console.log(path.resolve("/src/(docs)/lib"))
 export default defineConfig({
@@ -10,6 +13,9 @@ export default defineConfig({
     sveltekit(),
     CustomHmr()
   ],
+  define: {
+    CONFIG
+  },
   resolve: {
     alias: {
       $components: path.resolve("/src/routes/(docs)/lib"),
